@@ -1,9 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My GitHub Webpage</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>atelier a</title>
+
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="style.css">
+
+<!-- Link to Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Encode+Sans:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Hello from my GitHub Page!</h1>
+
+  <!-- ===== HEADER SECTION ===== -->
+  <header class="header">
+    <!-- Hamburger button for mobile -->
+    <div class="hamburger" id="hamburger">
+      &#9776; <!-- Hamburger icon -->
+    </div>
+
+    <!-- Navigation menu -->
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="#">home.</a></li>
+        <li><a href="#">about.</a></li>
+        <li><a href="#">contact.</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== HERO SECTION ===== --> 
+  <main class="hero">
+    <div class="brand-text">
+      atelier a.
+    </div>
+  </main>
+
+  <!-- ===== SECTION One ===== -->
+ <section class="section" id="two-boxes">
+  <div class="spacer"></div> 
+    <!-- Section heading area -->
+  <div class="section-header text-center">
+    <h1>DOCUMENTING THE MOST MONDANE</h1>
+  </div>
+    <div class="section-header text-center">
+    <h1>BUT BEAUTIFUL</h1>
+  </div>
+<div class="spacer-large"></div> 
+
+  <div class="container">
+    <!-- Left box -->
+    <div class="box">
+      <img src="img/000065.jpg" alt="Project one" class="box-image">
+      <h2>Project One</h2>
+      <p>This is a short description of the project. You can write whatever you like here.</p>
+    </div>
+
+    <!-- Right box -->
+    <div class="box">
+      <img src="img/000067.jpg" alt="Project two" class="box-image">
+      <h2>Project Two</h2>
+      <p>Another description here. Both boxes stay aligned and responsive.</p>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- ===== SECTION Two ===== -->
+  <section class="section" id="section_two">
+    <h2>OUR SERVICES</h2>
+    <p>Describe your services. You can add more styling or cards here.</p>
+  </section>
+
+  <!-- ===== SECTION Three ===== -->
+  <section class="section" id="section_three">
+    <h2>CONTACT US</h2>
+    <p>Provide contact info or a form here.</p>
+  </section>
+
+  
+  <!-- ===== JAVASCRIPT FOR HAMBURGER ===== -->
+  <script>
+    // Select hamburger button and menu
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+
+    // Toggle menu visibility on click
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
+
 </body>
 </html>
