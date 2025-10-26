@@ -50,17 +50,22 @@ h1 {
 
 /* ===================== HERO SECTION ===================== */
 .hero {
-  background-image: url('img/000047.jpg'); /* replace with your image */
+  background-image: url('img/000047.jpg');
   background-size: cover;
   background-position: center;
-  height: 100dvh; /* dynamic viewport height — mobile friendly */
-  position: relative;
+  height: 100dvh; /* full dynamic viewport height (fixes iPhone issue) */
   display: flex;
-  align-items: flex-end; /* bottom-align brand text */
+  align-items: flex-end;
   padding: 20px;
   position: relative;
-    /* NEW: keep hero fixed while scrolling */
-  background-attachment: fixed; /* makes background “stick” */
+  overflow: hidden;
+}
+
+/* Only apply background-attachment: fixed on larger screens */
+@media (min-width: 1024px) {
+  .hero {
+    background-attachment: fixed;
+  }
 }
 
 
@@ -279,17 +284,30 @@ font-family: dm-serif-display-regular;
 .footer-links a:hover {
   color: #000; /* hover contrast */
 }
+/* Default — works on all devices */
+#section_three,
+#section_four {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-attachment: scroll; /* normal scroll for mobile */
+}
+
+/* Section-specific images */
 #section_three {
   background-image: url('img/000067.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center top;
 }
 
 #section_four {
   background-image: url('img/000065.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center bottom;
+}
+
+/* Optional: enable fixed backgrounds only on large screens */
+@media (min-width: 1024px) {
+  #section_three,
+  #section_four {
+    background-attachment: fixed;
+  }
 }
 
