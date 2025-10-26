@@ -9,6 +9,7 @@ body, html {
   height: 100%;
   font-family: 'Encode Sans', sans-serif;
   scroll-behavior: smooth; /* smooth scrolling when clicking menu links */
+   overflow-x: hidden; /* stops horizontal scrolling */
 }
 h2 {
   font-family: 'Encode Sans', sans-serif;
@@ -84,6 +85,13 @@ h1 {
   background-color: #f2f0e2;
   color: #3911c7;
   text-align: left;
+
+/* Smaller devices: reduce side padding */
+@media (max-width: 600px) {
+  .section {
+    padding: 60px 20px;
+  }
+}
 }
 
 
@@ -105,8 +113,9 @@ h1 {
   justify-content: space-between;
   gap: 200px;
   flex-wrap: wrap;
-  max-width: 98%;
+  max-width: 100%;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 /* Each box */
