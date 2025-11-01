@@ -17,6 +17,8 @@
 
   <!-- ===== HEADER SECTION ===== -->
   <header class="header">
+      <!-- Brand on the left -->
+  <a href="index.html" class="brand"></a>
     <!-- Hamburger button for mobile -->
     <div class="hamburger" id="hamburger">
       &#9776; <!-- Hamburger icon -->
@@ -27,7 +29,7 @@
       <ul>
         <li><a href="#">home.</a></li>
         <li><a href="#">about.</a></li>
-        <li><a href="#">contact.</a></li>
+        <li><a href="#">blog.</a></li>
       </ul>
     </nav>
   </header>
@@ -54,16 +56,16 @@
   <div class="container">
     <!-- Left box -->
     <div class="box">
-      <img src="img/000065.jpg" alt="Project one" class="box-image">
-      <h2>Motherhood</h2>
-      <p>This is a short description of the project. You can write whatever you like here.</p>
+      <img src="img/C9.jpg" alt="Project one" class="box-image">
+      <h2>Childhood</h2>
+    <a href="childhood.html" class="btn">GALLERY</a>
     </div>
 
     <!-- Right box -->
     <div class="box">
-      <img src="img/000067.jpg" alt="Project two" class="box-image">
-      <h2>Weddings</h2>
-      <p>Another description here. Both boxes stay aligned and responsive.</p>
+      <img src="img/M1.1.jpg" alt="Project two" class="box-image">
+      <h2>Motherhood</h2>
+       <a href="motherhood.html" class="btn">GALLERY</a>
     </div>
 
   </div>
@@ -75,7 +77,8 @@
   <div class="spacer"></div> 
     <!-- Section heading area -->
   <div class="section-header text-center">
-    <h1>MOMENTS of LIFE and the INBETWEENS, 
+    <h1>MOMENTS of LIFE and the INBETWEENS,</h1>
+  </div>
     <div class="section-header text-center">
     <h1>to REMEMBER.</h1>
   </div>
@@ -84,34 +87,41 @@
   <div class="container">
     <!-- Left box -->
     <div class="box">
-      <img src="img/DSCF8166.jpg" alt="Project one" class="box-image">
-      <h2>small businesses</h2>
-      <p>This is a short description of the project. You can write whatever you like here.</p>
+      <img src="img/B3.jpg" alt="Project one" class="box-image">
+      <h2>Small Businesses</h2>
+    <a href="smallbusinesses.html" class="btn">GALLERY</a>
     </div>
 
     <!-- Right box -->
     <div class="box">
-      <img src="img/000065.jpg" alt="Project two" class="box-image">
-      <h2>Weddings</h2>
-      <p>Another description here. Both boxes stay aligned and responsive.</p>
+      <img src="img/P7.jpg" alt="Project two" class="box-image">
+      <h2>Prints</h2>
+       <a href="prints.html" class="btn">GALLERY</a>
     </div>
   </div>
   <div class="spacer-large"></div> 
-      <div class="section-header text-center">
-    <h1>BOLD. IMPERFECT. AND REAL. </h1>
+  <div class="section-header text-center">
+    <h1>ON FILM AND DIGITAL.</h1>
+  </div>
+   <div class="section-header text-center">
+    <h1>BOLD & SOFT. IMPERFECT. AND REAL.
+    </h1>
   </div>
 </section>
 
  <section class="section" id="section_three">
-  <h2>CONTACT US</h2>
-  <p>Provide contact info or a form here.</p>
+  <h2></h2>
+  
 </section>
 
 <section class="section" id="section_four">
-  <h2>More Info</h2>
-  <p>Provide additional content here.</p>
+  <h2></h2>
+
 </section>
 
+<section class="section" id="section_five">
+  <h2></h2>
+</section>
   
   <!-- ===== JAVASCRIPT FOR HAMBURGER ===== -->
   <script>
@@ -124,6 +134,8 @@
       menu.classList.toggle('active');
     });
   </script>
+
+
 <!-- ===================== FOOTER ===================== -->
 <footer class="footer">
   <div class="footer-content">
@@ -137,5 +149,28 @@
     </div>
   </div>
 </footer>
+<script>
+  // Fade in on load
+  document.body.classList.add('fade');
+  window.addEventListener('load', () => {
+    document.body.classList.add('fade-active');
+  });
+
+  // Fade out on link click
+  document.querySelectorAll('a').forEach(link => {
+    const href = link.getAttribute('href');
+    // Only apply fade if link goes to another page
+    if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        document.body.classList.remove('fade-active');
+        setTimeout(() => {
+          window.location = href;
+        }, 500); // matches CSS transition duration
+      });
+    }
+  });
+</script>
+
 </body>
 </html>

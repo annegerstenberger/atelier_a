@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>small businesses</title>
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      background: #fcf9f3;
+      padding-top: 80px;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 3rem;
+      color: #333;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 80px;
+      padding: 2rem 40px;
+    }
+
+    .gallery .img-container {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery .img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer; /* make it clear it's clickable */
+    }
+
+    .gallery .img-container img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .gallery .img-container:nth-child(3n-1),
+    .gallery .img-container:nth-child(6n-1) {
+      transform: translateY(40px);
+    }
+
+    .gallery .img-container img.left { object-position: left center; }
+    .gallery .img-container img.center { object-position: center center; }
+    .gallery .img-container img.right { object-position: right center; }
+
+    @media (max-width: 800px) {
+      .gallery {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== HEADER SECTION ===== -->
+  <header class="header">
+    <a href="index.html" class="brand">atelier a.</a>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="index.html">home.</a></li>
+        <li><a href="#">about.</a></li>
+        <li><a href="#">blog.</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1 class="left-align">friends.</h1>
+
+  <div class="gallery">
+    <div class="img-container"><img src="img/B1.jpg" alt="Image 1" class="center"></div>
+    <div class="img-container"><img src="img/B2.jpg" alt="Image 2" class="center"></div>
+    <div class="img-container"><img src="img/B2.1.jpg" alt="Image 3" class="center"></div>
+    <div class="img-container"><img src="img/B3.jpg" alt="Image 4" class="left"></div>
+    <div class="img-container"><img src="img/B4.jpg" alt="Image 5" class="center"></div>
+    <div class="img-container"><img src="img/B4.1.jpg" alt="Image 6" class="center"></div>
+    <div class="img-container"><img src="img/B4.2.jpg" alt="Image 7" class="left"></div>
+    <div class="img-container"><img src="img/B5.jpg" alt="Image 8" class="center"></div>
+    <div class="img-container"><img src="img/B6.jpg" alt="Image 9" class="center"></div>
+    <div class="img-container"><img src="img/B7.jpg" alt="Image 10" class="center"></div>
+    <div class="img-container"><img src="img/B8.jpg" alt="Image 11" class="center"></div>
+    <div class="img-container"><img src="img/B8.1.jpg" alt="Image 12" class="center"></div>
+    <div class="img-container"><img src="img/B8.2.jpg" alt="Image 13" class="center"></div>
+    <div class="img-container"><img src="img/B8.3.jpg" alt="Image 14" class="center"></div>
+    <div class="img-container"><img src="img/B8.4.jpg" alt="Image 15" class="center"></div>
+    <div class="img-container"><img src="img/B9.jpg" alt="Image 16" class="center"></div>
+    <div class="img-container"><img src="img/B10.jpg" alt="Image 17" class="center"></div>
+  </div>
+
+  <div style="text-align:center; margin: 4rem 0;">
+    <a href="index.html" style="text-decoration:none; color:#333; font-family:'Encode Sans', sans-serif; font-size:1rem; letter-spacing:1px;">
+      ← back home
+    </a>
+  </div>
+
+  <!-- ===== LIGHTBOX OVERLAY ===== -->
+  <div id="lightbox" class="lightbox">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    // ===== HAMBURGER =====
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+
+     // ===== LIGHTBOX FUNCTIONALITY =====
+  const galleryImages = document.querySelectorAll('.gallery img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  // Close when clicking overlay or pressing ESC
+  lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      lightbox.classList.remove('active');
+    }
+  });
+</script>
+<script>
+  // Fade in on load
+  document.body.classList.add('fade');
+  window.addEventListener('load', () => {
+    document.body.classList.add('fade-active');
+  });
+
+  // Fade out on link click
+  document.querySelectorAll('a').forEach(link => {
+    const href = link.getAttribute('href');
+    // Only apply fade if link goes to another page
+    if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        document.body.classList.remove('fade-active');
+        setTimeout(() => {
+          window.location = href;
+        }, 500); // matches CSS transition duration
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

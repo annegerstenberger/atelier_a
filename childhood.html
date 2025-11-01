@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Childhood</title>
+
+      <link rel="stylesheet" href="style.css">
+  <style>
+
+    body {
+      margin: 0;
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      background: #fcf9f3;
+        padding-top: 80px; /* ensures content starts below header */
+    }
+
+    h1 {
+      text-align: center;
+      padding: 3rem;
+      color: #333;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* max 3 per row */
+      gap: 80px;
+        padding-left: 40px;   /* match header and text */
+  padding-right: 40px;  /* optional, for symmetry */
+  padding-top: 2rem;    /* adjust spacing above gallery */
+  padding-bottom: 2rem; /* adjust spacing below gallery */
+    }
+
+    /* Portrait container */
+    /* Portrait container */
+/* Portrait container */
+.gallery .img-container {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Images inside container */
+.gallery .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.gallery .img-container img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Stagger middle images slightly down */
+.gallery .img-container:nth-child(3n-1) {
+  transform: translateY(40px);
+}
+
+.gallery .img-container:nth-child(6n-1) {
+  transform: translateY(40px);
+}
+/* Focus classes */
+.gallery .img-container img.left {
+  object-position: left center;
+}
+.gallery .img-container img.center {
+  object-position: center center;
+}
+.gallery .img-container img.right {
+  object-position: right center;
+}
+    /* Responsive: stack images on smaller screens */
+    @media (max-width: 800px) {
+      .gallery {
+        grid-template-columns: 1fr; /* one per row */
+        gap: 20px;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+     <!-- ===== HEADER SECTION ===== -->
+ <header class="header">
+  <!-- Brand on the left -->
+  <a href="index.html" class="brand">atelier a.</a>
+
+  <!-- Hamburger button for mobile -->
+  <div class="hamburger" id="hamburger">
+    &#9776; <!-- Hamburger icon -->
+  </div>
+
+  <!-- Navigation menu -->
+  <nav class="menu" id="menu">
+    <ul>
+      <li><a href="index.html">home.</a></li>
+      <li><a href="#">about.</a></li>
+      <li><a href="#">blog.</a></li>
+    </ul>
+  </nav>
+</header>
+<h1 class="left-align">
+ childhood universe.
+</h1>
+<div class="gallery">
+  <div class="img-container">
+    <img src="img/C1.jpg" alt="Image 1" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C2.jpg" alt="Image 2" class="right">
+  </div>
+  <div class="img-container">
+    <img src="img/C3.jpg" alt="Image 3" class="right">
+  </div>
+  <div class="img-container">
+    <img src="img/C4.jpg" alt="Image 4" class="left">
+  </div>
+ <div class="img-container">
+    <img src="img/C5.jpg" alt="Image 3" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C6.jpg" alt="Image 4" class="center">
+  </div>
+   <div class="img-container">
+    <img src="img/C7.jpg" alt="Image 2" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C8.jpg" alt="Image 3" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C9.jpg" alt="Image 4" class="left">
+  </div>
+ <div class="img-container">
+    <img src="img/C10.jpg" alt="Image 3" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C11.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C12.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C13.jpg" alt="Image 4" class="center">
+  </div>
+    <div class="img-container">
+    <img src="img/C14.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C15.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C16.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C17.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C18.jpg" alt="Image 4" class="center">
+  </div>
+<div class="img-container">
+    <img src="img/C19.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C20.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C21.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C22.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C23.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C24.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C25.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C26.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C27.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C28.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C29.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C30.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C31.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C32.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C33.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C34.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C35.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C36.jpg" alt="Image 4" class="center">
+  </div>
+  <div class="img-container">
+    <img src="img/C37.jpg" alt="Image 4" class="center">
+  </div>
+</div>
+
+<div style="text-align:center; margin: 4rem 0;">
+  <a href="index.html" style="text-decoration:none; color:#333; font-family:'Encode Sans', sans-serif; font-size:1rem; letter-spacing:1px;">
+    ← back home
+  </a>
+</div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const menu = document.getElementById('menu');
+
+  hamburger.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+</script>
+<script>
+  // Fade in on load
+  document.body.classList.add('fade');
+  window.addEventListener('load', () => {
+    document.body.classList.add('fade-active');
+  });
+
+  // Fade out on link click
+  document.querySelectorAll('a').forEach(link => {
+    const href = link.getAttribute('href');
+    // Only apply fade if link goes to another page
+    if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        document.body.classList.remove('fade-active');
+        setTimeout(() => {
+          window.location = href;
+        }, 500); // matches CSS transition duration
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

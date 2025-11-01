@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mixed Gallery</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      background: #fcf9f3;
+      padding-top: 80px;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 3rem;
+      color: #333;
+    }
+
+    /* ===== MIXED GALLERY ===== */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 60px;
+      padding: 2rem 40px;
+    }
+
+    /* Portrait container */
+    .gallery .portrait {
+      aspect-ratio: 3 / 4;
+    }
+
+    /* Landscape container */
+    .gallery .landscape {
+      aspect-ratio: 4 / 3;
+    }
+
+    .img-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+    }
+
+    .img-container img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    /* Subtle staggering for visual rhythm */
+    .img-container:nth-child(2n) {
+      transform: translateY(40px);
+    }
+
+    /* Responsive stack */
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .img-container:nth-child(2n) {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <a href="index.html" class="brand">atelier a.</a>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="index.html">home.</a></li>
+        <li><a href="#">about.</a></li>
+        <li><a href="#">blog.</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1 class="left-align">country.</h1>
+
+<div class="gallery">
+  <div class="img-container landscape">
+    <img src="img/P3.jpg" alt="Image 1">
+  </div>
+  <div class="placeholder portrait"></div>
+
+  <div class="placeholder landscape"></div>
+  <div class="img-container portrait">
+    <img src="img/P4.jpg" alt="Image 4">
+  </div>
+
+ <div class="placeholder portrait"></div>
+  <div class="img-container landscape">
+    <img src="img/P6.jpg" alt="Image 6">
+  </div>
+
+   
+  <div class="img-container landscape">
+    <img src="img/P1.jpg" alt="Image 6">
+  </div>
+ <div class="placeholder landscape"></div>
+
+   
+ <div class="placeholder landscape"></div>
+  <div class="img-container landscape">
+    <img src="img/P2.jpg" alt="Image 6">
+  </div>
+
+   
+ <div class="placeholder landscape"></div>
+  <div class="img-container portrait">
+    <img src="img/P7.jpg" alt="Image 6">
+  </div>
+
+  <div class="img-container landscape">
+    <img src="img/P5.jpg" alt="Image 6">
+  </div>
+
+</div>
+
+
+
+  <div style="text-align:center; margin: 4rem 0;">
+    <a href="index.html" style="text-decoration:none; color:#333; font-family:'Encode Sans', sans-serif; font-size:1rem; letter-spacing:1px;">
+      ← back home
+    </a>
+  </div>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div id="lightbox" class="lightbox">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    // ===== HAMBURGER =====
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+
+    // ===== LIGHTBOX FUNCTIONALITY =====
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') lightbox.classList.remove('active');
+    });
+  </script>
+</body>
+</html>

@@ -25,6 +25,10 @@ h1 {
   font-size: 4rem;
   margin-bottom: 20px;
 }
+h1.left-align {
+  text-align: left;
+  padding-left: 40px;  /* optional, to match header padding */
+}
 /* ===================== FONTS ===================== */
 .dm-serif-display-regular {
   font-family: "DM Serif Display", serif;
@@ -51,7 +55,7 @@ h1 {
 
 /* ===================== HERO SECTION ===================== */
 .hero {
-  background-image: url('img/000047.jpg');
+  background-image: url('img/P3.jpg');
   background-size: cover;
   background-position: center;
   height: 100dvh; /* full dynamic viewport height (fixes iPhone issue) */
@@ -78,23 +82,18 @@ h1 {
   color: #c0cedb;
 }
 /* ===== SCROLLABLE SECTIONS ===== */
-.section {
-  position: relative;
-  min-height: 100vh;
+  .section {
+min-height: 100vh;
   padding: 100px 40px;
   background-color: #f2f0e2;
   color: #3911c7;
   text-align: left;
-
-/* Smaller devices: reduce side padding */
+}
 @media (max-width: 600px) {
   .section {
     padding: 60px 20px;
   }
 }
-}
-
-
 .section:nth-of-type(even) {
   background-color: #fcf9f3; /* optional alternating background */
 }
@@ -111,7 +110,7 @@ h1 {
 .container {
   display: flex;
   justify-content: space-between;
-  gap: 200px;
+  gap: clamp(20px, 10vw, 200px);
   flex-wrap: wrap;
   max-width: 100%;
   margin: 0 auto;
@@ -155,17 +154,28 @@ h1 {
 
 /* ===================== HEADER / MENU ===================== */
 .header {
-  position: fixed; /* fixed so it stays on top while scrolling */
+  position: fixed;
   top: 0;
   width: 100%;
   padding: 20px 40px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between; /* Brand left, menu right */
   align-items: center;
   background: rgba(0, 0, 0, 0);
   z-index: 10;
 }
 
+/* Brand styling */
+.header .brand {
+  font-family: 'DM Serif Display', serif; /* same as site */
+  font-size: 2rem; /* same height as header text */
+  color: #c0cedb; /* adjust as needed */
+  text-decoration: none; /* remove underline */
+}
+
+.brand:hover {
+  color: #3b32ec; /* same hover color as menu links */
+}
 /* Menu list */
 .menu ul {
   list-style: none;
@@ -180,7 +190,7 @@ font-family: dm-serif-display-regular;
  font-size: 2rem;
   color: #c0cedb;
   text-decoration: none;
-  font-weight: regular;
+  font-weight: 400;
   transition: color 0.3s;
 }
 
@@ -295,7 +305,8 @@ font-family: dm-serif-display-regular;
 }
 /* Default — works on all devices */
 #section_three,
-#section_four {
+#section_four, 
+#section_five {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -305,11 +316,14 @@ font-family: dm-serif-display-regular;
 
 /* Section-specific images */
 #section_three {
-  background-image: url('img/000067.jpg');
+  background-image: url('img/C26.jpg');
 }
 
 #section_four {
-  background-image: url('img/000065.jpg');
+  background-image: url('img/C32.jpg');
+}
+#section_five {
+  background-image: url('img/C16.jpg');
 }
 
 /* Optional: enable fixed backgrounds only on large screens */
@@ -319,4 +333,149 @@ font-family: dm-serif-display-regular;
     background-attachment: fixed;
   }
 }
+.center { object-position: center; }
+.right  { object-position: right; }
+.left   { object-position: left; }
+.top    { object-position: top; }
+.bottom { object-position: bottom; }
+/* ===== BUTTON STYLING ===== */
+.btn {
+  display: inline-block;
+   width: fit-content;   
+  margin-top: 10px;
+  padding: 10px 24px;
+  background-color: #c0cedb;
+  color: #fcf9f3;
+  text-decoration: none;
+  font-family: "Encode Sans", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
+.btn:hover {
+  background-color: #3911c7;
+  transform: translateY(-2px);
+}
+/* ===== LIGHTBOX STYLING ===== */
+.lightbox {
+  display: flex; /* hidden by default */
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+   opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: 9999;
+}
+.lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  cursor: zoom-out;
+   transform: scale(0.95);
+  transition: transform 0.4s ease;
+}
+.lightbox.active img {
+  transform: scale(1);
+}
+/* ===== PAGE TRANSITION EFFECT ===== */
+.fade {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+body.fade-active {
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+.gallery {
+  display: grid;
+grid-template-columns: repeat(2, max-content);
+justify-content: center;
+  gap: 80px 60px;
+  padding: 2rem 40px;
+  box-sizing: border-box;
+}
+
+/* Portraits — tall and narrow */
+.img-container.portrait {
+  width: 525px;
+  height: 700px;
+  overflow: hidden;
+}
+
+/* Landscapes — rotated equivalent size */
+.img-container.landscape {
+  width: 700px;   /* now the same as portrait height */
+  height: 525px;  /* now the same as portrait width */
+  overflow: hidden;
+}
+
+/* All images */
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.img-container img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Optional subtle staggering */
+.img-container:nth-child(2n) {
+  transform: translateY(40px);
+}
+
+/* Mobile: stack one per row */
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .img-container.portrait,
+  .img-container.landscape {
+    width: 100%;
+    height: auto;
+  }
+
+  .img-container:nth-child(2n) {
+    transform: none;
+  }
+}
+/* ===== PLACEHOLDERS ===== */
+.placeholder {
+  display: block;
+  flex: 0 0 auto; /* don’t stretch or shrink */
+  overflow: hidden;
+  visibility: hidden; /* hidden but keeps space */
+}
+
+/* Match portrait proportions */
+.placeholder.portrait {
+  height: 700px;
+  width: 525px;
+}
+
+/* Match landscape proportions */
+.placeholder.landscape {
+  height: 525px;
+  width: 700px;
+}
