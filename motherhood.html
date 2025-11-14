@@ -104,6 +104,8 @@
       <li><a href="#">blog.</a></li>
     </ul>
   </nav>
+    <!-- ===== closing the menu on mobile ===== --> 
+    <div class="overlay" id="overlay"></div>
 </header>
 <h1 class="left-align">
   strong<br>mothers.
@@ -139,14 +141,27 @@
   <div id="lightbox" class="lightbox">
     <img id="lightbox-img" src="" alt="">
   </div>
-<script>
+
+ <script>
+   <!-- ===== JAVASCRIPT FOR HAMBURGER ===== -->
+
   const hamburger = document.getElementById('hamburger');
   const menu = document.getElementById('menu');
+  const overlay = document.getElementById('overlay');
 
+  // Open menu
   hamburger.addEventListener('click', () => {
-    menu.classList.toggle('active');
+    menu.classList.add('active');
+    overlay.classList.add('active');
+  });
+
+  // Close menu when clicking outside
+  overlay.addEventListener('click', () => {
+    menu.classList.remove('active');
+    overlay.classList.remove('active');
   });
 </script>
+
 <script>
   // Fade in on load
   document.body.classList.add('fade');

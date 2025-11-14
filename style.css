@@ -25,6 +25,12 @@ h1 {
   font-size: 4rem;
   margin-bottom: 20px;
 }
+/* Mobile screens */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem; /* smaller on mobile */
+  }
+}
 h1.left-align {
   text-align: left;
   padding-left: 40px;  /* optional, to match header padding */
@@ -211,23 +217,56 @@ font-family: dm-serif-display-regular;
   .brand-text {
     font-size: 7rem;
   }
-
-  .menu ul {
-    flex-direction: column; /* stack menu vertically */
-    gap: 10px;
-    background: rgba(0, 0, 0, 0.8);
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    display: none; /* hide menu initially */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: transparent;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 10;
   }
 
-  /* Show menu when active */
-  .menu.active ul {
-    display: flex;
+  .overlay.active {
+    opacity: 1;
+    pointer-events: auto;
   }
+ .menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 50vw; /* half screen */
+  background: #c0cedb;
+  padding: 80px 30px; /* space for header */
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  z-index: 20;
+}
+
+.menu.active {
+  transform: translateX(0);
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
 
   /* Show hamburger button */
   .hamburger {
@@ -450,16 +489,22 @@ justify-content: center;
     gap: 40px;
   }
 
-  .img-container.portrait,
-  .img-container.landscape {
+   /* Keep portrait and landscape aspect ratios */
+  .img-container.portrait {
     width: 100%;
-    height: auto;
+    aspect-ratio: 525 / 700; /* height / width from original */
   }
 
-  .img-container:nth-child(2n) {
-    transform: none;
+  .img-container.landscape {
+    width: 100%;
+    aspect-ratio: 700 / 525; /* maintain landscape */
   }
-}
+
+    /* Remove any transform on all img-containers */
+  .img-container {
+    transform: none !important;
+  }
+
 /* ===== PLACEHOLDERS ===== */
 .placeholder {
   display: block;
