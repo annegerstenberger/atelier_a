@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">   <!-- for text to display correctly -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- for responsiveness --> 
   <title>atelier a</title>
 
   <!-- Link to CSS -->
@@ -13,12 +13,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Encode+Sans:wght@100..900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="no-brand">  <!-- ===== to avoid brand on landing page ===== -->
+
 
   <!-- ===== HEADER SECTION ===== -->
   <header class="header">
       <!-- Brand on the left -->
-  <a href="index.html" class="brand"></a>
+  <a href="index.html" class="brand">atelier a.</a>
+
     <!-- Hamburger button for mobile -->
     <div class="hamburger" id="hamburger">
       &#9776; <!-- Hamburger icon -->
@@ -76,7 +78,7 @@
 
 
   <!-- ===== SECTION Two ===== -->
- <section class="section" id="two-boxes">
+ <section class="section" id="two-boxes-2">
   <div class="spacer"></div> 
     <!-- Section heading area -->
   <div class="section-header text-center">
@@ -113,17 +115,17 @@
 </section>
 
  <section class="section" id="section_three">
-  <h2></h2>
+ 
   
 </section>
 
 <section class="section" id="section_four">
-  <h2></h2>
+ 
 
 </section>
 
 <section class="section" id="section_five">
-  <h2></h2>
+  
 </section>
   
   <!-- ===== JAVASCRIPT FOR HAMBURGER ===== -->
@@ -144,8 +146,6 @@
     overlay.classList.remove('active');
   });
 </script>
-
-
 
 <!-- ===================== FOOTER ===================== -->
 <footer class="footer">

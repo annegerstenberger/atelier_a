@@ -11,6 +11,7 @@ body, html {
   scroll-behavior: smooth; /* smooth scrolling when clicking menu links */
    overflow-x: hidden; /* stops horizontal scrolling */
 }
+/* Text */
 h2 {
   font-family: 'Encode Sans', sans-serif;
   font-weight: 400; /* normal */
@@ -18,6 +19,7 @@ h2 {
   font-size: 3rem;
   margin-bottom: 20px;
 }
+
 h1 {
   font-family: 'DM Serif Display', serif;
   font-weight: 400; /* normal */
@@ -25,16 +27,27 @@ h1 {
   font-size: 4rem;
   margin-bottom: 20px;
 }
-/* Mobile screens */
+
+h1.left-align {
+  text-align: left;
+  padding-left: 40px;  /* optional, to match header padding */
+}
+
+.brand-text {
+   font-family: 'DM Serif Display', serif;
+  font-weight: 400; /* normal */
+  font-style: normal;
+  font-size: 8rem;
+  color: #c0cedb;
+}
+
+/* Mobile text */
 @media (max-width: 768px) {
   h1 {
     font-size: 3rem; /* smaller on mobile */
   }
 }
-h1.left-align {
-  text-align: left;
-  padding-left: 40px;  /* optional, to match header padding */
-}
+
 /* ===================== FONTS ===================== */
 .dm-serif-display-regular {
   font-family: "DM Serif Display", serif;
@@ -57,13 +70,12 @@ h1.left-align {
     "wdth" 100;
 }
 
-
-
 /* ===================== HERO SECTION ===================== */
 .hero {
   background-image: url('img/P3.jpg');
   background-size: cover;
   background-position: center;
+  height: 100vh; /* fallback */
   height: 100dvh; /* full dynamic viewport height (fixes iPhone issue) */
   display: flex;
   align-items: flex-end;
@@ -72,7 +84,7 @@ h1.left-align {
   overflow: hidden;
 }
 
-/* Only apply background-attachment: fixed on larger screens */
+/* mobile hero */
 @media (min-width: 1024px) {
   .hero {
     background-attachment: fixed;
@@ -80,13 +92,6 @@ h1.left-align {
 }
 
 
-.brand-text {
-   font-family: 'DM Serif Display', serif;
-  font-weight: 400; /* normal */
-  font-style: normal;
-  font-size: 8rem;
-  color: #c0cedb;
-}
 /* ===== SCROLLABLE SECTIONS ===== */
   .section {
 min-height: 100vh;
@@ -100,18 +105,16 @@ min-height: 100vh;
     padding: 60px 20px;
   }
 }
+/* optional alternating background */
 .section:nth-of-type(even) {
-  background-color: #fcf9f3; /* optional alternating background */
+  background-color: #fcf9f3; 
 }
-
 
 .section h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
 /* ===== 2 BOXES SECTION ===== */
-
-
 /* Container holding both boxes */
 .container {
   display: flex;
@@ -157,18 +160,18 @@ min-height: 100vh;
   line-height: 1.5;
 }
 
-
 /* ===================== HEADER / MENU ===================== */
 .header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 20px 40px;
   display: flex;
-  justify-content: space-between; /* Brand left, menu right */
-  align-items: center;
-  background: rgba(0, 0, 0, 0);
-  z-index: 10;
+  align-items: center;       /* vertically center items */
+  justify-content: space-between;  /* brand left, menu/hamburger right */
+  padding: 0 40px;           /* horizontal spacing */
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  background: #fcf9f300;
+  z-index: 1000;
 }
 
 /* Brand styling */
@@ -182,21 +185,26 @@ min-height: 100vh;
 .brand:hover {
   color: #3b32ec; /* same hover color as menu links */
 }
-/* Menu list */
+
+.menu {
+  margin-left: auto;
+}
+/* Menu unorganised list */
 .menu ul {
-  list-style: none;
-  display: flex;
-  gap: 50px;
-    margin: 0;
-  padding: 0;
+  list-style: none; /* remove bullets */
+  display: flex; /* next to each other row */
+  gap: 50px; /* space between items */
+    margin: 0; 
+  padding: 0; 
+    align-items: center; 
 }
 
 .menu a {
-font-family: dm-serif-display-regular;
- font-size: 2rem;
+  font-family: "DM Serif Display", serif;
+  font-size: 2rem;
   color: #c0cedb;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 100;
   transition: color 0.3s;
 }
 
@@ -258,6 +266,8 @@ font-family: dm-serif-display-regular;
   display: flex;
   flex-direction: column;
   gap: 20px;
+    top: 60px; /* adjust for smaller header */
+    right: 10px;
 }
 
 .menu ul li a {
@@ -279,12 +289,8 @@ font-family: dm-serif-display-regular;
   .brand-text {
     font-size: 1.8rem;
   }
-
-  .menu ul {
-    top: 60px; /* adjust for smaller header */
-    right: 10px;
-  }
 }
+
 /* ===================== SPACERS ===================== */
 .spacer {
   height: 40px; /* adjust as needed */
@@ -297,6 +303,21 @@ font-family: dm-serif-display-regular;
 .spacer-large {
   height: 200px;
 }
+
+@media (max-width: 768px) {
+  .spacer {
+    height: 20px; /* smaller for mobile */
+  }
+
+  .spacer-small {
+    height: 10px;
+  }
+
+  .spacer-large {
+    height: 80px; /* depends on what you want */
+  }
+}
+/* ===================== TEXT ALIGNMENT ===================== */
 .text-center {
   text-align: center;
 }
@@ -342,14 +363,15 @@ font-family: dm-serif-display-regular;
 .footer-links a:hover {
   color: #000; /* hover contrast */
 }
-/* Default — works on all devices */
+
+/* home page last three images */
 #section_three,
 #section_four, 
 #section_five {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+  background-size: cover; /* normal scroll for mobile */
+  background-position: center; /* center the image */
+  background-repeat: no-repeat; /* prevent tiling */
+  min-height: 100vh; /* full viewport height */
   background-attachment: scroll; /* normal scroll for mobile */
 }
 
@@ -377,6 +399,7 @@ font-family: dm-serif-display-regular;
 .left   { object-position: left; }
 .top    { object-position: top; }
 .bottom { object-position: bottom; }
+
 /* ===== BUTTON STYLING ===== */
 .btn {
   display: inline-block;
@@ -397,6 +420,7 @@ font-family: dm-serif-display-regular;
   background-color: #3911c7;
   transform: translateY(-2px);
 }
+
 /* ===== LIGHTBOX STYLING ===== */
 .lightbox {
   display: flex; /* hidden by default */
@@ -429,6 +453,7 @@ font-family: dm-serif-display-regular;
 .lightbox.active img {
   transform: scale(1);
 }
+
 /* ===== PAGE TRANSITION EFFECT ===== */
 .fade {
   opacity: 0;
@@ -439,14 +464,7 @@ body.fade-active {
   opacity: 1;
   transition: opacity 0.6s ease;
 }
-.gallery {
-  display: grid;
-grid-template-columns: repeat(2, max-content);
-justify-content: center;
-  gap: 80px 60px;
-  padding: 2rem 40px;
-  box-sizing: border-box;
-}
+
 
 /* Portraits — tall and narrow */
 .img-container.portrait {
@@ -504,6 +522,7 @@ justify-content: center;
   .img-container {
     transform: none !important;
   }
+}
 
 /* ===== PLACEHOLDERS ===== */
 .placeholder {
@@ -523,4 +542,8 @@ justify-content: center;
 .placeholder.landscape {
   height: 525px;
   width: 700px;
+}
+
+.no-brand .brand {
+  visibility: hidden;
 }
