@@ -33,13 +33,6 @@ h1.left-align {
   padding-left: 40px;  /* optional, to match header padding */
 }
 
-.brand-text {
-   font-family: 'DM Serif Display', serif;
-  font-weight: 400; /* normal */
-  font-style: normal;
-  font-size: 8rem;
-  color: #c0cedb;
-}
 
 /* Mobile text */
 @media (max-width: 768px) {
@@ -90,7 +83,18 @@ h1.left-align {
     background-attachment: fixed;
   }
 }
-
+.brand-text {
+   font-family: 'DM Serif Display', serif;
+  font-weight: 400; /* normal */
+  font-style: normal;
+  font-size: 8rem;
+  color: #c0cedb;
+}
+@media screen and (max-width: 480px) {
+  .brand-text {
+    font-size: 4rem;
+  }
+}
 
 /* ===== SCROLLABLE SECTIONS ===== */
   .section {
@@ -185,11 +189,6 @@ min-height: 100vh;
 .brand:hover {
   color: #3b32ec; /* same hover color as menu links */
 }
-@media screen and (max-width: 480px) {
-  .brand-text {
-    font-size: 1.8rem;
-  }
-}
 
 /* Menu container */
 .menu {
@@ -228,9 +227,7 @@ min-height: 100vh;
 
 /* ===================== MOBILE RESPONSIVE ===================== */
 @media screen and (max-width: 768px) {
-  .brand-text {
-    font-size: 7rem;
-  }
+  
   .overlay {
     position: fixed;
     inset: 0;
