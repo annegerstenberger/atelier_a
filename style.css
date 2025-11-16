@@ -185,7 +185,13 @@ min-height: 100vh;
 .brand:hover {
   color: #3b32ec; /* same hover color as menu links */
 }
+@media screen and (max-width: 480px) {
+  .brand-text {
+    font-size: 1.8rem;
+  }
+}
 
+/* Menu container */
 .menu {
   margin-left: auto;
 }
@@ -276,18 +282,10 @@ min-height: 100vh;
   font-size: 1.5rem;
   letter-spacing: 1px;
 }
-
-
   /* Show hamburger button */
   .hamburger {
     display: block;
     margin-left: auto; /* push to right */
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .brand-text {
-    font-size: 1.8rem;
   }
 }
 
@@ -465,8 +463,19 @@ body.fade-active {
   transition: opacity 0.6s ease;
 }
 
-
+/* Gallery Prints */
 /* Portraits — tall and narrow */
+/* ============================
+   PRINT GALLERY (random layout)
+=============================== */
+.print-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 2rem 40px;
+  position: relative;
+}
+
 .img-container.portrait {
   width: 525px;
   height: 700px;
@@ -478,6 +487,39 @@ body.fade-active {
   width: 700px;   /* now the same as portrait height */
   height: 525px;  /* now the same as portrait width */
   overflow: hidden;
+}
+
+/* ===== PLACEHOLDERS Print gallery===== */
+.placeholder {
+  display: block;
+  flex: 0 0 auto; /* don’t stretch or shrink */
+  overflow: hidden;
+  visibility: hidden; /* hidden but keeps space */
+}
+
+/* Match portrait proportions */
+.placeholder.portrait {
+  height: 700px;
+  width: 525px;
+}
+
+/* Match landscape proportions */
+.placeholder.landscape {
+  height: 525px;
+  width: 700px;
+}
+
+.print-gallery .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.print-gallery .img-container img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 /* All images */
@@ -494,6 +536,60 @@ body.fade-active {
   transform: scale(1.02);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
+
+/* Galleries 3 in a row */
+.gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* max 3 per row */
+      gap: 80px;
+        padding-left: 40px;   /* match header and text */
+  padding-right: 40px;  /* optional, for symmetry */
+  padding-top: 2rem;    /* adjust spacing above gallery */
+  padding-bottom: 2rem; /* adjust spacing below gallery */
+    }
+
+/* Portrait container */
+.gallery .img-container {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Images inside container */
+.gallery .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.gallery .img-container img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+
+/* Focus classes */
+.gallery .img-container img.left {
+  object-position: left center;
+}
+.gallery .img-container img.center {
+  object-position: center center;
+}
+.gallery .img-container img.right {
+  object-position: right center;
+}
+
+/* Responsive: stack images on smaller screens */
+    @media (max-width: 800px) {
+      .gallery {
+        grid-template-columns: 1fr; /* one per row */
+        gap: 20px;
+      }
+    }
 
 /* staggering */
 .img-container:nth-child(3n-1) {
@@ -524,25 +620,7 @@ body.fade-active {
   }
 }
 
-/* ===== PLACEHOLDERS ===== */
-.placeholder {
-  display: block;
-  flex: 0 0 auto; /* don’t stretch or shrink */
-  overflow: hidden;
-  visibility: hidden; /* hidden but keeps space */
-}
 
-/* Match portrait proportions */
-.placeholder.portrait {
-  height: 700px;
-  width: 525px;
-}
-
-/* Match landscape proportions */
-.placeholder.landscape {
-  height: 525px;
-  width: 700px;
-}
 
 .no-brand .brand {
   visibility: hidden;
