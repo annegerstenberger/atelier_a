@@ -11,7 +11,7 @@ body, html {
   scroll-behavior: smooth; /* smooth scrolling when clicking menu links */
    overflow-x: hidden; /* stops horizontal scrolling */
 }
-/* Text */
+/* ===================== Text ===================== */
 h2 {
   font-family: 'Encode Sans', sans-serif;
   font-weight: 400; /* normal */
@@ -33,6 +33,13 @@ h1.left-align {
   padding-left: 40px;  /* optional, to match header padding */
 }
 
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
 
 /* Mobile text */
 @media (max-width: 768px) {
@@ -96,7 +103,7 @@ h1.left-align {
   }
 }
 
-/* ===== SCROLLABLE SECTIONS ===== */
+/* ===================== SCROLLABLE SECTIONS ===================== */
   .section {
 min-height: 100vh;
   padding: 100px 40px;
@@ -118,7 +125,7 @@ min-height: 100vh;
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
-/* ===== 2 BOXES SECTION ===== */
+/* ===================== 2 BOXES SECTION ===================== */
 /* Container holding both boxes */
 .container {
   display: flex;
@@ -150,14 +157,14 @@ min-height: 100vh;
 
 /* Text area */
 .box h2 {
-  font-family: "encode-sans-regular",sans-serif;
+  font-family: "Encode Sans", sans-serif;
   font-size: 1.8rem;
   margin: 20px 0px 10px;
   color: #333;
 }
 
 .box p {
-  font-family: "encode-sans-regular", sans-serif;
+  font-family: "Encode Sans", sans-serif;
   font-size: 1rem;
   margin: 0 0px 20px;
   color: #444;
@@ -188,6 +195,10 @@ min-height: 100vh;
 
 .brand:hover {
   color: #3b32ec; /* same hover color as menu links */
+}
+
+.no-brand .brand {
+  visibility: hidden;
 }
 
 /* Menu container */
@@ -225,7 +236,7 @@ min-height: 100vh;
   cursor: pointer;
 }
 
-/* ===================== MOBILE RESPONSIVE ===================== */
+/*  MOBILE RESPONSIVE header/menu */
 @media screen and (max-width: 768px) {
   
   .overlay {
@@ -312,14 +323,7 @@ min-height: 100vh;
     height: 80px; /* depends on what you want */
   }
 }
-/* ===================== TEXT ALIGNMENT ===================== */
-.text-center {
-  text-align: center;
-}
 
-.text-left {
-  text-align: left;
-}
 /* ===================== FOOTER ===================== */
 .footer {
   background-color: #BAB58D;   /* Footer background */
@@ -359,7 +363,7 @@ min-height: 100vh;
   color: #000; /* hover contrast */
 }
 
-/* home page last three images */
+/* ===================== home page last three images ===================== */
 #section_three,
 #section_four, 
 #section_five {
@@ -382,7 +386,7 @@ min-height: 100vh;
   background-image: url('img/C16.jpg');
 }
 
-/* Optional: enable fixed backgrounds only on large screens */
+/* fixed backgrounds only on large screens */
 @media (min-width: 1024px) {
   #section_three,
   #section_four {
@@ -395,7 +399,7 @@ min-height: 100vh;
 .top    { object-position: top; }
 .bottom { object-position: bottom; }
 
-/* ===== BUTTON STYLING ===== */
+/* ===================== BUTTON STYLING ===================== */
 .btn {
   display: inline-block;
    width: fit-content;   
@@ -416,11 +420,10 @@ min-height: 100vh;
   transform: translateY(-2px);
 }
 
-/* ===== LIGHTBOX STYLING ===== */
+/* ===================== LIGHTBOX STYLING ===================== */
 .lightbox {
   display: flex; /* hidden by default */
   position: fixed;
-  z-index: 9999;
   top: 0;
   left: 0;
   width: 100%;
@@ -449,7 +452,7 @@ min-height: 100vh;
   transform: scale(1);
 }
 
-/* ===== PAGE TRANSITION EFFECT ===== */
+/* ===================== PAGE TRANSITION EFFECT ===================== */
 .fade {
   opacity: 0;
   transition: opacity 0.6s ease;
@@ -460,11 +463,24 @@ body.fade-active {
   transition: opacity 0.6s ease;
 }
 
-/* Gallery Prints */
-/* Portraits — tall and narrow */
-/* ============================
-   PRINT GALLERY (random layout)
-=============================== */
+/* ===================== All images ===================== */
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.img-container img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ===================== Galleries ===================== */
+/* PRINT GALLERY (random layout) */
+
 .print-gallery {
   display: flex;
   flex-wrap: wrap;
@@ -486,7 +502,7 @@ body.fade-active {
   overflow: hidden;
 }
 
-/* ===== PLACEHOLDERS Print gallery===== */
+/* PLACEHOLDERS Print gallery */
 .placeholder {
   display: block;
   flex: 0 0 auto; /* don’t stretch or shrink */
@@ -512,26 +528,6 @@ body.fade-active {
   object-fit: cover;
   display: block;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.print-gallery .img-container img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/* All images */
-.img-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  cursor: pointer;
-}
-
-.img-container img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 /* Galleries 3 in a row */
@@ -562,13 +558,6 @@ body.fade-active {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Hover effect */
-.gallery .img-container img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-
 /* Focus classes */
 .gallery .img-container img.left {
   object-position: left center;
@@ -580,13 +569,6 @@ body.fade-active {
   object-position: right center;
 }
 
-/* Responsive: stack images on smaller screens */
-    @media (max-width: 800px) {
-      .gallery {
-        grid-template-columns: 1fr; /* one per row */
-        gap: 20px;
-      }
-    }
 
 /* staggering */
 .img-container:nth-child(3n-1) {
@@ -615,10 +597,4 @@ body.fade-active {
   .img-container {
     transform: none !important;
   }
-}
-
-
-
-.no-brand .brand {
-  visibility: hidden;
 }
