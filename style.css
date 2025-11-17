@@ -497,8 +497,8 @@ body.fade-active {
 
 /* Landscapes — rotated equivalent size */
 .img-container.landscape {
-  width: 700px;   /* now the same as portrait height */
-  height: 525px;  /* now the same as portrait width */
+    width: 700px;
+  height: 525px;
   overflow: hidden;
 }
 
@@ -512,14 +512,14 @@ body.fade-active {
 
 /* Match portrait proportions */
 .placeholder.portrait {
+ width: 525px;
   height: 700px;
-  width: 525px;
 }
 
 /* Match landscape proportions */
 .placeholder.landscape {
+   width: 700px;
   height: 525px;
-  width: 700px;
 }
 
 .print-gallery .img-container img {
@@ -528,6 +528,36 @@ body.fade-active {
   object-fit: cover;
   display: block;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* ===== MOBILE: stack images ===== */
+@media (max-width: 900px) {
+  .print-gallery {
+    display: flex;
+    flex-direction: column;  /* stack one per row */
+    gap: 10px;               /* smaller gap */
+    padding: 1rem;           /* optional padding */
+  }
+
+  /* Keep the original dimensions */
+  .img-container.portrait {
+    width: 100%;       /* full width of container */
+    aspect-ratio: 3 / 4; 
+    max-width: 525px;  /* optional to prevent being too wide */
+    margin: 0 auto;    /* center images */
+  }
+
+  .img-container.landscape {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    max-width: 700px;  /* optional */
+    margin: 0 auto;
+  }
+
+  /* Remove placeholders completely on mobile */
+  .placeholder {
+    display: none;
+  }
 }
 
 /* Galleries 3 in a row */
