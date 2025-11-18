@@ -252,6 +252,7 @@
 <script>
   // Fade in on load
   document.body.classList.add('fade');
+
   window.addEventListener('load', () => {
     document.body.classList.add('fade-active');
   });
@@ -259,17 +260,27 @@
   // Fade out on link click
   document.querySelectorAll('a').forEach(link => {
     const href = link.getAttribute('href');
-    // Only apply fade if link goes to another page
+
+    // Only fade out on actual page navigation
     if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
-      link.addEventListener('click', e => {
+      link.addEventListener('click', (e) => {
         e.preventDefault();
         document.body.classList.remove('fade-active');
         setTimeout(() => {
           window.location = href;
-        }, 500); // matches CSS transition duration
+        }, 500); // same duration as CSS transition
       });
     }
   });
+
+  // Fix white screen when going BACK to the page (bfcache restore)
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+      document.body.classList.add('fade-active');
+    }
+  });
+
+
 
     // ===== LIGHTBOX FUNCTIONALITY =====
     const galleryImages = document.querySelectorAll('.gallery img');
