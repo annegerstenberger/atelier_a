@@ -363,7 +363,7 @@ min-height: 100vh;
   color: #000; /* hover contrast */
 }
 
-/* ===================== home page last three images ===================== */
+/* ===================== PARALAX Section 3,4 and 5 ===================== */
 #section_three,
 #section_four, 
 #section_five {
@@ -388,11 +388,36 @@ min-height: 100vh;
 
 /* fixed backgrounds only on large screens */
 @media (min-width: 1024px) {
-  #section_three,
+  #section_three {
+      background-attachment: fixed; /* parallax effect for desktop */
+  }
+
   #section_four {
-    background-attachment: fixed;
+    object-position: right;
+      background-attachment: fixed; /* parallax effect for desktop */
   }
 }
+
+/* ===== mobile focus positions ===== */
+@media (max-width: 768px) {
+  #section_three { background-position: left center; }
+  #section_four  { background-position: right center; }
+  #section_five  { background-position: center center; }
+
+  /* mobile gaps */
+  #section_three,
+  #section_four {
+    margin-bottom: 20px;
+    background-position: center center; 
+  }
+
+  #section_five {
+    margin-bottom: 0; /* ensure no gap */
+    background-position: left center;
+  }
+}
+
+/* ===================== OBJECT POSITION CLASSES ===================== */
 .center { object-position: center; }
 .right  { object-position: right; }
 .left   { object-position: left; }
