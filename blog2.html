@@ -41,10 +41,28 @@
             <p>November, 2025</p>
         </div>
 
-        <div class="image-column">
-            <img src="img/P9.jpg" alt="Blog Image">
-        </div>
+       <div class="image-column">
+  <div class="gallery-wrapper">
+    <div class="arrow left" id="scroll-left">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
     </div>
+
+    <div class="gallery-container" id="gallery">
+      <div class="gallery-item"><img src="img/P2.jpg" alt="Image 1"></div>
+      <div class="gallery-item"><img src="img/M3.1.jpg" alt="Image 2"></div>
+      <div class="gallery-item"><img src="img/C35.jpg" alt="Image 3"></div>
+      <div class="gallery-item"><img src="img/M3.jpg" alt="Image 4"></div>
+    </div>
+
+    <div class="arrow right" id="scroll-right">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 6 15 12 9 18"></polyline>
+      </svg>
+    </div>
+  </div>
+</div>
 
 
     <!-- ===== MOBILE MENU SCRIPT ===== -->
@@ -63,6 +81,18 @@
             overlay.classList.remove('active');
         });
     </script>
+<script>
+    const gallery = document.getElementById('gallery');
+const scrollLeft = document.getElementById('scroll-left');
+const scrollRight = document.getElementById('scroll-right');
 
+scrollLeft.addEventListener('click', () => {
+    gallery.scrollBy({ left: -300, behavior: 'smooth' });
+});
+
+scrollRight.addEventListener('click', () => {
+    gallery.scrollBy({ left: 300, behavior: 'smooth' });
+});
+</script>
 </body>
 </html>
