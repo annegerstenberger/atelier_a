@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="blog2.css">
+
+    <!-- Optional Google Font -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Encode+Sans:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <a href="index.html" class="brand">atelier a.</a>
+
+        <div class="hamburger" id="hamburger">&#9776;</div>
+
+        <nav class="menu" id="menu">
+            <ul>
+                <li><a href="index.html">home.</a></li>
+                <li><a href="#">about.</a></li>
+                <li><a href="#">blog.</a></li>
+            </ul>
+        </nav>
+
+        <div class="overlay" id="overlay"></div>
+    </header>
+
+
+    <!-- ===== MAIN LAYOUT ===== -->
+    <div class="container">
+        <div class="text-column">
+            <h3>Lily, Violet & August</h3>
+            <p>November, 2025</p>
+        </div>
+
+        <div class="image-column">
+            <img src="img/P9.jpg" alt="Blog Image">
+        </div>
+    </div>
+
+
+    <!-- ===== MOBILE MENU SCRIPT ===== -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const menu = document.getElementById('menu');
+        const overlay = document.getElementById('overlay');
+
+        hamburger.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
+
+        overlay.addEventListener('click', () => {
+            menu.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+    </script>
+
+</body>
+</html>

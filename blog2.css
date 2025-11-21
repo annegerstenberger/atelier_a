@@ -1,0 +1,268 @@
+/* RESET — match index.html behaviour */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  font-family: "Encode Sans", sans-serif;
+}
+
+
+/* ===== GLOBAL ===== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #fcf9f3;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/* ===================== FONTS ===================== */
+.dm-serif-display-regular {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-serif-display-regular-italic {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.encode-sans-regular {
+  font-family: "Encode Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+h1 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400; /* normal */
+  font-style: normal;
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: #3911c7;
+}
+
+h1.left-align {
+  text-align: left;
+  padding-left: 40px;  /* optional, to match header padding */
+    color: #c0cedb;
+}
+
+h2 {
+  font-family: 'Encode Sans', sans-serif;
+  font-weight: 400; /* normal */
+  font-style: normal;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400; /* normal */
+  font-style: normal;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #c0cedb;
+  padding-top: 20px;
+}
+
+.text-column p {
+    font-family: "Encode Sans", sans-serif;   /* matches your main site */
+    font-size: 1.1rem;                        /* slightly larger and modern */
+    line-height: 1.8;                          /* more breathable */
+    color: #3911c7;                            /* soft dark grey */
+    margin-bottom: 1.4rem;                     /* spacing between paragraphs */
+    max-width: 600px;                          /* comfortable reading width */
+}
+
+/* ================================ */
+/*            HEADER                */
+/* ================================ */
+
+.header {
+  display: flex;
+  align-items: center;       /* vertically center items */
+  justify-content: space-between;  /* brand left, menu/hamburger right */
+  padding: 0 40px;           /* horizontal spacing */
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  background: #fcf9f300;
+  z-index: 1000;
+}
+
+.header .brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem;
+  color: #c0cedb;
+  text-decoration: none;
+}
+
+.brand:hover {
+  color: #3b32ec;
+}
+
+.no-brand .brand {
+  visibility: hidden;
+}
+
+/* Menu container */
+.menu {
+  margin-left: auto;
+}
+
+/* Desktop menu list */
+.menu ul {
+  list-style: none; /* remove bullets */
+  display: flex; /* next to each other row */
+  gap: 50px; /* space between items */
+    margin: 0; 
+  padding: 0; 
+    align-items: center; 
+}
+
+.menu a {
+  font-family: "DM Serif Display", serif;
+  font-size: 2rem;
+  color: #c0cedb;
+  text-decoration: none;
+  font-weight: 100;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: #3b32ec;
+}
+
+/* Hamburger icon (hidden on desktop) */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* ================================ */
+/*   RESPONSIVE HEADER (MOBILE)     */
+/* ================================ */
+
+@media screen and (max-width: 768px) {
+
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: transparent;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+  }
+
+  .overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .menu {
+    position: fixed;
+    top: 20px;
+    right: 0;
+    height: 100vh;
+    width: 50vw;
+    background: #c0cedb;
+    padding: 80px 30px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 20;
+  }
+
+  .menu.active {
+    transform: translateX(0);
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu ul li a {
+    color: #fff;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .hamburger {
+    display: block;
+    margin-left: auto;
+  }
+}
+
+
+/* ================================ */
+/*            MAIN LAYOUT           */
+/* ================================ */
+
+.container {
+    display: flex;
+    height: 100vh;        /* exactly one screen */
+    width: 100%;
+    gap: 20px;
+    box-sizing: border-box;
+    align-items: flex-end; /* text and image bottom-aligned */
+    padding: 0;
+}
+
+.text-column {
+    flex: 1;
+ padding: 40px 40px 10px 40px; /* top 40px, right 40px, bottom 10px, left 40px */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* text sticks to bottom of text column */
+}
+
+.image-column {
+    flex: 3;
+}
+
+.image-column img {
+    width: 100%;
+    height: 100%;         /* match container height */
+    object-fit: cover;
+    display: block;
+}
+
+.text-column h1 {
+    margin-top: 0;
+}
+
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding-top: 140px;
+    }
+
+    .image-column img {
+        height: auto;
+    }
+}
