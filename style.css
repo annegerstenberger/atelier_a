@@ -26,11 +26,23 @@ h1 {
   font-style: normal;
   font-size: 4rem;
   margin-bottom: 20px;
+  color: #3911c7;
+}
+
+h3 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400; /* normal */
+  font-style: normal;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #c0cedb;
+  padding-top: 20px;
 }
 
 h1.left-align {
   text-align: left;
   padding-left: 40px;  /* optional, to match header padding */
+    color: #c0cedb;
 }
 
 .text-center {
@@ -107,7 +119,7 @@ h1.left-align {
   .section {
 min-height: 100vh;
   padding: 100px 40px;
-  background-color: #f2f0e2;
+  background-color: #fcf9f3;
   color: #3911c7;
   text-align: left;
 }
@@ -326,7 +338,7 @@ min-height: 100vh;
 
 /* ===================== FOOTER ===================== */
 .footer {
-  background-color: #BAB58D;   /* Footer background */
+  background-color: #c0cedb;   /* Footer background */
   color: #FAF1E0;              /* Text color */
   text-align: center;
   padding: 40px 20px;
@@ -441,8 +453,18 @@ min-height: 100vh;
 }
 
 .btn:hover {
-  background-color: #3911c7;
+  background-color: #c0cedb;
   transform: translateY(-2px);
+}
+
+/* ===================== TITLE LINK STYLING ===================== */
+.title-link {
+  text-decoration: none;   /* removes underline */
+  color: #c0cedb;          /* pick your color */
+}
+
+.title-link:hover {
+  color: #3911c7;          /* optional hover color */
 }
 
 /* ===================== LIGHTBOX STYLING ===================== */
