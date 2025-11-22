@@ -48,7 +48,7 @@ h1 {
   font-style: normal;
   font-size: 4rem;
   margin-bottom: 20px;
-  color: #3911c7;
+  color: #28b88d;
 }
 
 h1.left-align {
@@ -69,15 +69,15 @@ h3 {
   font-weight: 400;
   font-size: 3rem;
   margin-bottom: 20px;
-  color: #c0cedb;
+  color: #162f59;
   padding-top: 20px;
 }
 
 .text-column p {
   font-family: "Encode Sans", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   line-height: 1.8;
-  color: #3911c7;
+  color: #162f59;
   margin-bottom: 1.4rem;
   max-width: 600px;
 }
@@ -101,12 +101,12 @@ h3 {
 .header .brand {
   font-family: 'DM Serif Display', serif;
   font-size: 2rem;
-  color: #c0cedb;
+  color: #162f59;
   text-decoration: none;
 }
 
 .brand:hover {
-  color: #3b32ec;
+  color: #c0cedb;
 }
 
 .no-brand .brand {
@@ -129,13 +129,13 @@ h3 {
 .menu a {
   font-family: "DM Serif Display", serif;
   font-size: 2rem;
-  color: #c0cedb;
+  color: #162f59;
   font-weight: 100;
   transition: color 0.3s;
 }
 
 .menu a:hover {
-  color: #3b32ec;
+  color: #c0cedb;
 }
 
 .hamburger {
@@ -209,7 +209,7 @@ h3 {
 
 .text-column {
   flex: 1;
-  padding: 40px 40px 20px 40px;
+  padding: 40px 40px 10px 40px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

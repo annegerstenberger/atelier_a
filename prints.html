@@ -6,6 +6,11 @@
   <title>Mixed Gallery</title>
   <link rel="stylesheet" href="style.css">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Encode+Sans:wght@100..900&display=swap" rel="stylesheet">
+
+
   <style>
     body {
       margin: 0;
@@ -168,6 +173,13 @@
       document.body.classList.add('fade-active');
     }
   });
+  // ===== LAZY LOADING IMAGES =====
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("img").forEach(img => {
+    img.loading = "lazy";
+  });
+});
 </script>
 
 </body>

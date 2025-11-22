@@ -38,7 +38,7 @@
 <div class="blog-section">
   <div class="text-column">
     <h3>Lily, Violet & August</h3>
-    <p>November, 2025</p>
+    <p>Bathurst, 2025</p>
   </div>
 
   <div class="image-column">
@@ -78,8 +78,8 @@
 
 <div class="blog-section">
   <div class="text-column">
-    <h3>Section 1: Lily, Violet & August</h3>
-    <p>November, 2025</p>
+    <h3>Thomise, Frankie & Saffie</h3>
+    <p>Orange, 2021</p>
   </div>
 
   <div class="image-column">
@@ -91,10 +91,23 @@
       </div>
 
       <div class="gallery-container">
-        <div class="gallery-item"><img src="img/P2.jpg" alt="Image 1"></div>
-        <div class="gallery-item"><img src="img/M3.1.jpg" alt="Image 2"></div>
-        <div class="gallery-item"><img src="img/C35.jpg" alt="Image 3"></div>
-        <div class="gallery-item"><img src="img/M3.jpg" alt="Image 4"></div>
+          <div class="gallery-item"><img src="img/Thomise21-14.jpg" alt="Image 4"></div>
+        <div class="gallery-item"><img src="img/Thomise21-8.jpg" alt="Image 1"></div>
+          <div class="gallery-item"><img src="img/Thomise21.jpg" alt="Image 4"></div>
+        <div class="gallery-item"><img src="img/Thomise21-9.jpg" alt="Image 2"></div>
+        <div class="gallery-item"><img src="img/Thomise21-6.jpg" alt="Image 3"></div>
+        <div class="gallery-item"><img src="img/Thomise21-7.jpg" alt="Image 4"></div>
+          <div class="gallery-item"><img src="img/Thomise21-4.jpg" alt="Image 4"></div>
+            <div class="gallery-item"><img src="img/Thomise21-5.jpg" alt="Image 4"></div>
+              <div class="gallery-item"><img src="img/Thomise21-3.jpg" alt="Image 4"></div>
+                <div class="gallery-item"><img src="img/Thomise21-2.jpg" alt="Image 4"></div>
+                  <div class="gallery-item"><img src="img/Thomise21-12.jpg" alt="Image 4"></div>
+                    <div class="gallery-item"><img src="img/Thomise21-10.jpg" alt="Image 4"></div>
+                      <div class="gallery-item"><img src="img/Thomise21-11.jpg" alt="Image 4"></div>
+                          <div class="gallery-item"><img src="img/Thomise21-13.jpg" alt="Image 4"></div>
+                            <div class="gallery-item"><img src="img/Thomise21-15.jpg" alt="Image 4"></div>
+                              <div class="gallery-item"><img src="img/Thomise21-16.jpg" alt="Image 4"></div>
+                                <div class="gallery-item"><img src="img/Thomise21-17.jpg" alt="Image 4"></div>
       </div>
 
       <div class="arrow right">
@@ -135,6 +148,14 @@ document.querySelectorAll('.blog-section').forEach(section => {
     right.addEventListener('click', () => {
         gallery.scrollBy({ left: 300, behavior: 'smooth' });
     });
+});
+
+// ===== LAZY LOADING IMAGES =====
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("img").forEach(img => {
+    img.loading = "lazy";
+  });
 });
 </script>
 </body>
