@@ -150,6 +150,24 @@ h3 {
 /* ================================ */
 @media screen and (max-width: 768px) {
 
+    body {
+    padding-top: 180px; /* moves first section down */
+  }
+
+    .header {
+    padding: 0 40px; /* keep for layout, do NOT reduce */
+  }
+
+  .header .brand {
+    /* move brand visually closer to the edge */
+    transform: translateX(-20px); 
+  }
+
+  .header .hamburger {
+      transform: translateX(20px);
+  }
+
+  /* If you want it slightly lower or higher, adjust: 80–160px */
   .overlay {
     position: fixed;
     inset: 0;
@@ -200,7 +218,7 @@ h3 {
     display: block;
     margin-left: auto;
   }
-}
+ }
 
 /* ================================ */
 /*            MAIN LAYOUT           */
@@ -209,7 +227,7 @@ h3 {
 
 .text-column {
   flex: 1;
-  padding: 40px 40px 10px 40px;
+  padding: 40px 40px 10px 40px; /* top right bottom left */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -235,17 +253,7 @@ h3 {
   margin-top: 0; /* full viewport, no gap needed */
 }
 
-@media (max-width: 768px) {
-  .blog-section {
-    flex-direction: column;
-    height: auto; /* let sections shrink */
-    padding-bottom: 50px;
-  }
 
-  .image-column {
-    height: 300px;
-  }
-}
 
 /* ====== GALLERY ====== */
 .gallery-wrapper {
@@ -320,23 +328,88 @@ h3 {
 }
 
 /* ================================ */
-/*            RESPONSIVE            */
+/*           MOBILE FIXES           */
 /* ================================ */
+
 @media (max-width: 768px) {
-  .container {
+
+  /* Stack blog sections */
+  .blog-section {
     flex-direction: column;
-    padding-top: 140px;
+    height: auto;
+    gap: 0;
+    padding: 0 20px; /* uniform padding for all sections */
   }
 
+  /* Text column adjustments */
+  .text-column {
+    padding: 0;
+    margin: 0;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+  }
+
+  .text-column h3 {
+    font-size: 2rem;
+    padding-top: 0;
+  }
+
+  .text-column p {
+    font-size: 1.1rem;
+    max-width: 100%;
+  }
+
+  /* Image column adjustments */
   .image-column {
-    height: 300px;
+    height: auto;
+    width: 100%;
   }
 
-  .gallery-item {
-    width: 200px;
+  .gallery-wrapper {
+    height: auto;
   }
 
+  /* Mobile gallery container */
   .gallery-container {
-    padding: 10px;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    align-items: stretch; /* ensures all items have same height */
+    padding: 0;
   }
+
+.gallery-item {
+    flex: 0 0 auto;
+    height: 60vh;
+    aspect-ratio: auto; /* lets image width scale naturally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-item img {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+}
+
+  /* Arrows adjustments */
+  .arrow {
+    width: 30px;
+    height: 30px;
+    top: 45%;
+  }
+
+  .arrow svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Spacing between blog sections */
+  .blog-section + .blog-section {
+    margin-top: 100px; /* adjust as needed */
+  }
+
 }
