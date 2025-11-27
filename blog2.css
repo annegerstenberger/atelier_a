@@ -226,27 +226,23 @@ h3 {
 
 
 .text-column {
-  flex: 1;
-  padding: 40px 40px 10px 40px; /* top right bottom left */
+  width: 25%;
+  height: 100%;         /* matches 75vh */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  padding: 40px;
+  box-sizing: border-box;
 }
 
-.image-column {
-  flex: 3;
-  display: flex;
-  align-items: flex-end;
-  position: relative;
-  overflow: hidden;
-    height: 100%;
-}
 .blog-section {
   display: flex;
   width: 100%;
   gap: 20px;
-  align-items: flex-end;
+  flex-direction: column;
+    justify-content: flex-end; /* NEW — pushes gallery + text to the bottom */
    height: 100vh;
+     
 }
 /* Optional: spacing between stacked sections */
 .blog-section + .blog-section {
@@ -257,40 +253,49 @@ h3 {
 
 /* ====== GALLERY ====== */
 .gallery-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.gallery-container {
+  width: 75%;
   display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+     position: relative;  /* makes it the positioning parent */
+}
+.gallery-container {
+  height: 75vh;
+  width: 100%;
+  display: flex;       /* side-by-side layout */
   gap: 20px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  height: 100%;
-   padding-top: 200px;
+}
+.gallery-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  height: 100%; /* fill wrapper */
+  align-items: stretch; /* important */
 }
 
 /* Hide scrollbars */
-.gallery-container::-webkit-scrollbar {
+.gallery-track::-webkit-scrollbar {
   display: none;
 }
-.gallery-container {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.gallery-track::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
 
-
+.gallery-track::-moz-scrollbar {
+  display: none; /* Firefox */
+}
 
 .gallery-item {
-  flex: 0 0 auto; /* keep items in a row */
-  height: 100%;    /* fill parent container height */
-  width: auto;     /* width scales with image aspect ratio */
+  flex: 0 0 auto;
+  height: 100%;
 }
+
 .gallery-item img {
-  height: 100%;       /* fill container height */
-  width: auto;        /* width scales naturally */
-  object-fit: cover;  /* optional, ensures cropping if needed */
+  height: 100%;
+  width: auto;
+  object-fit: cover;
 }
 
 /* ====== ARROWS ====== */
@@ -307,7 +312,7 @@ h3 {
   border-radius: 50%;
   cursor: pointer;
   transition: background 0.3s;
-  z-index: 10;
+  z-index: 20;
 }
 
 .arrow:hover {
