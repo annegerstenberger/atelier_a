@@ -358,7 +358,7 @@ min-height: 100vh;
 
 .footer-text {
   font-family: "Open Sans", sans-serif; /* or your secondary font */
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   margin-bottom: 20px;
   opacity: 0.9;
 }
@@ -369,10 +369,11 @@ min-height: 100vh;
   margin: 0 15px;
   text-decoration: none;
   transition: color 0.3s;
+   font-size: 1.2rem;
 }
 
 .footer-links a:hover {
-  color: #000; /* hover contrast */
+  color: #c0cedb; /* hover contrast */
 }
 
 /* ===================== PARALAX Section 3,4 and 5 ===================== */
