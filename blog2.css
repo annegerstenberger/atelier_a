@@ -145,18 +145,14 @@ h3 {
   cursor: pointer;
 }
 
+
+
 /* ================================ */
 /*   RESPONSIVE HEADER (MOBILE)     */
 /* ================================ */
 @media screen and (max-width: 768px) {
 
-    body {
-    padding-top: 180px; /* moves first section down */
-  }
 
-    .header {
-    padding: 0 40px; /* keep for layout, do NOT reduce */
-  }
 
   .header .brand {
     /* move brand visually closer to the edge */
@@ -175,7 +171,7 @@ h3 {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
-    z-index: 10;
+    z-index: 2000;
   }
 
   .overlay.active {
@@ -185,7 +181,7 @@ h3 {
 
   .menu {
     position: fixed;
-    top: 20px;
+    top: 0px;
     right: 0;
     height: 100vh;
     width: 50vw;
@@ -333,88 +329,59 @@ h3 {
 }
 
 /* ================================ */
-/*           MOBILE FIXES           */
+/*       RESPONSIVE BEHAVIOR        */
 /* ================================ */
 
-@media (max-width: 768px) {
-
-  /* Stack blog sections */
-  .blog-section {
+@media (max-width: 900px) {
+    .blog-section {
+    display: flex;
     flex-direction: column;
-    height: auto;
-    gap: 0;
-    padding: 0 20px; /* uniform padding for all sections */
+    justify-content: flex-end;  /* pushes content to bottom */
+    height: 100vh;              /* full viewport height */
   }
 
-  /* Text column adjustments */
-  .text-column {
-    padding: 0;
-    margin: 0;
-    align-items: flex-start;
-    text-align: left;
+ .gallery-wrapper {
     width: 100%;
+    height: 70vh;      /* ← make wrapper 70% of viewport height */
   }
 
+  .text-column {
+    width: 100%;
+    height: 30vh;      /* ← make text column 30% of viewport height */
+    padding: 20px;
+    justify-content: flex-end;
+  }
+
+ 
+
+  .gallery-track {
+        height: 100%;      /* ensure track fills wrapper */
+        flex-direction: row; /* keep horizontal scrolling */
+    }
+
+        .gallery-item img {
+        height: 100%;      /* image fills track */
+        width: auto;
+    }
+
+  .gallery-container {
+     height: 100%;
+        flex-direction: column;   /* ← THIS is the missing rule */
+     
+  }
+
+  /* ===== MOBILE TEXT SIZING ===== */
   .text-column h3 {
-    font-size: 2rem;
-    padding-top: 0;
+    font-size: 2.2rem;   /* from 3rem → softer for small screens */
   }
 
   .text-column p {
-    font-size: 1.1rem;
-    max-width: 100%;
+    font-size: 1.2rem;   /* from 1.5rem → more readable */
+    line-height: 1.6;    /* reduce vertical stretching */
   }
-
-  /* Image column adjustments */
-  .image-column {
-    height: auto;
-    width: 100%;
+    /* ===== MORE SPACE BETWEEN BLOG SECTIONS ===== */
+  .blog-section {
+    margin-bottom: 60px;   /* increase spacing */
   }
-
-  .gallery-wrapper {
-    height: auto;
-  }
-
-  /* Mobile gallery container */
-  .gallery-container {
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    align-items: stretch; /* ensures all items have same height */
-    padding: 0;
-  }
-
-.gallery-item {
-    flex: 0 0 auto;
-    height: 60vh;
-    aspect-ratio: auto; /* lets image width scale naturally */
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.gallery-item img {
-    width: auto;
-    height: 100%;
-    object-fit: contain;
-}
-
-  /* Arrows adjustments */
-  .arrow {
-    width: 30px;
-    height: 30px;
-    top: 45%;
-  }
-
-  .arrow svg {
-    width: 30px;
-    height: 30px;
-  }
-
-  /* Spacing between blog sections */
-  .blog-section + .blog-section {
-    margin-top: 100px; /* adjust as needed */
-  }
-
-}
