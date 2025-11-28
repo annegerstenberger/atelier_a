@@ -223,7 +223,7 @@ h3 {
 
 .text-column {
   width: 25%;
-  height: 100%;         /* matches 75vh */
+  height: 75vh;         /* matches 75vh */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -250,23 +250,25 @@ h3 {
 /* ====== GALLERY ====== */
 .gallery-wrapper {
   width: 75%;
+    height: 75vh;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
      position: relative;  /* makes it the positioning parent */
 }
 .gallery-container {
-  height: 75vh;
+
   width: 100%;
   display: flex;       /* side-by-side layout */
   gap: 20px;
-  overflow-x: auto;
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 .gallery-track {
   display: flex;
   gap: 20px;
   overflow-x: auto;
+    overflow-y: hidden;
   height: 100%; /* fill wrapper */
   align-items: stretch; /* important */
 }
@@ -351,8 +353,6 @@ h3 {
     padding: 20px;
     justify-content: flex-end;
   }
-
- 
 
   .gallery-track {
         height: 100%;      /* ensure track fills wrapper */
