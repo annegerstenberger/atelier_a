@@ -10,6 +10,7 @@ body, html {
   font-family: 'Encode Sans', sans-serif;
   scroll-behavior: smooth; /* smooth scrolling when clicking menu links */
    overflow-x: hidden; /* stops horizontal scrolling */
+     background-color: #fcf9f3;
 }
 /* ===================== Text ===================== */
 h2 {
@@ -57,6 +58,13 @@ h1.left-align {
 @media (max-width: 768px) {
   h1 {
     font-size: 3rem; /* smaller on mobile */
+  }
+  h1.left-align {
+    padding-left: 20px; /* less padding on mobile */
+  }
+  h3 {
+    font-size: 2rem; /* smaller on mobile */
+    text-align: center;
   }
 }
 
@@ -125,7 +133,7 @@ min-height: 100vh;
 }
 @media (max-width: 600px) {
   .section {
-    padding: 60px 20px;
+    padding: 40px 20px;
   }
 }
 /* optional alternating background */
@@ -244,13 +252,20 @@ min-height: 100vh;
 .hamburger {
   display: none; /* show only on small screens */
   font-size: 2rem;
-  color: white;
+  color: #c0cedb;
   cursor: pointer;
 }
 
 /*  MOBILE RESPONSIVE header/menu */
 @media screen and (max-width: 768px) {
-  
+    /* Match blog2: visually shift brand & hamburger 20px */
+  .header .brand {
+    transform: translateX(-20px);
+  }
+
+  .header .hamburger {
+    transform: translateX(20px);
+  }
   .overlay {
     position: fixed;
     inset: 0;
@@ -312,14 +327,17 @@ min-height: 100vh;
 /* ===================== SPACERS ===================== */
 .spacer {
   height: 40px; /* adjust as needed */
+  
 }
 
 .spacer-small {
   height: 20px;
+   
 }
 
 .spacer-large {
   height: 200px;
+    
 }
 
 @media (max-width: 768px) {
@@ -583,8 +601,8 @@ body.fade-active {
   .print-gallery {
     display: flex;
     flex-direction: column;  /* stack one per row */
-    gap: 10px;               /* smaller gap */
-    padding: 1rem;           /* optional padding */
+    gap: 20px;               /* smaller gap */
+    padding: 20px;           /* optional padding */
   }
 
   /* Keep the original dimensions */
@@ -657,7 +675,8 @@ body.fade-active {
 @media (max-width: 900px) {
   .gallery {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 20px;
+    padding: 20px;
   }
 
    /* Keep portrait and landscape aspect ratios */
