@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- for responsiveness --> 
   <title>atelier a</title>
 
-  <!-- Link to CSS -->
+<!-- Link to CSS -->
   <link rel="stylesheet" href="style.css">
 
 <!-- Link to Google Fonts -->
@@ -16,10 +16,10 @@
 <body class="no-brand">  <!-- ===== to avoid brand on landing page ===== -->
 
 
-  <!-- ===== HEADER SECTION ===== -->
+<!-- ===== HEADER SECTION ===== -->
   <header class="header">
-      <!-- Brand on the left -->
-  <a href="index.html" class="brand">atelier a.</a>
+    
+  <a href="index.html" class="brand">atelier a.</a>   <!-- Brand on the left -->
 
     <!-- Hamburger button for mobile -->
     <div class="hamburger" id="hamburger">
@@ -123,25 +123,10 @@
 <section class="section" id="section_five">
   
 </section>
-  
-  <!-- ===== JAVASCRIPT FOR HAMBURGER ===== -->
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const menu = document.getElementById('menu');
-  const overlay = document.getElementById('overlay');
 
-  // Open menu
-  hamburger.addEventListener('click', () => {
-    menu.classList.add('active');
-    overlay.classList.add('active');
-  });
 
-  // Close menu when clicking outside
-  overlay.addEventListener('click', () => {
-    menu.classList.remove('active');
-    overlay.classList.remove('active');
-  });
-</script>
+
+
 
 <!-- ===================== FOOTER ===================== -->
 <footer class="footer">
@@ -155,48 +140,6 @@
     </div>
   </div>
 </footer>
-  <!-- ===== FADE IN/OUT SCRIPT ===== -->
-<script>
-  // Fade in on load
-  document.body.classList.add('fade');
-
-  window.addEventListener('load', () => {
-    document.body.classList.add('fade-active');
-  });
-
-  // Fade out on link click
-  document.querySelectorAll('a').forEach(link => {
-    const href = link.getAttribute('href');
-
-    // Only fade out on actual page navigation
-    if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.body.classList.remove('fade-active');
-        setTimeout(() => {
-          window.location = href;
-        }, 500); // same duration as CSS transition
-      });
-    }
-  });
-
-  // Fix white screen when going BACK to the page (bfcache restore)
-  window.addEventListener('pageshow', (event) => {
-    if (event.persisted) {
-      document.body.classList.add('fade-active');
-    }
-  });
-// ===== LAZY LOADING IMAGES =====
-
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("img").forEach(img => {
-    img.loading = "lazy";
-  });
-});
-</script>
-
-</script>
-
 
 </body>
 </html>

@@ -123,7 +123,7 @@ h1.left-align {
   }
 }
 
-/* ===================== SCROLLABLE SECTIONS ===================== */
+/* ===================== SCROLLABLE SECTIONS index.html ===================== */
   .section {
 min-height: 100vh;
   padding: 100px 40px;
@@ -145,7 +145,7 @@ min-height: 100vh;
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
-/* ===================== 2 BOXES SECTION ===================== */
+/* ===================== 2 BOXES SECTION index.html ===================== */
 /* Container holding both boxes */
 .container {
   display: flex;
@@ -217,7 +217,7 @@ min-height: 100vh;
   color: #162f59; /* same hover color as menu links */
 }
 
-.no-brand .brand {
+.no-brand .brand { /* hidden on index.html */
   visibility: hidden;
 }
 
@@ -429,7 +429,7 @@ min-height: 100vh;
   }
 }
 
-/* ===== mobile focus positions ===== */
+/* mobile focus positions sections 3,4,5 */
 @media (max-width: 768px) {
   #section_three { background-position: left center; }
   #section_four  { background-position: right center; }
@@ -545,7 +545,7 @@ body.fade-active {
 }
 
 /* ===================== Galleries ===================== */
-/* PRINT GALLERY (random layout) */
+/* ===================== PRINT GALLERY (random layout) ===================== */
 
 .print-gallery {
   display: flex;
@@ -596,7 +596,7 @@ body.fade-active {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* ===== MOBILE: stack images ===== */
+/*  MOBILE: stack images */
 @media (max-width: 900px) {
   .print-gallery {
     display: flex;
@@ -626,7 +626,7 @@ body.fade-active {
   }
 }
 
-/* Galleries 3 in a row */
+/* ===================== Galleries 3 in a row ===================== */
 .gallery {
       display: grid;
       grid-template-columns: repeat(3, 1fr); /* max 3 per row */
