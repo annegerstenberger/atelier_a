@@ -67,5 +67,41 @@ document.addEventListener("DOMContentLoaded", () => {
         img.loading = "lazy";
     });
 });
+// ================== BLOG2 GALLERY SCROLL ==================
+// Only applies to the blog2 gallery-wrapper/gallery-track setup
+document.querySelectorAll('.gallery-wrapper').forEach(gallery => {
+  const track = gallery.querySelector('.gallery-track');
+  const left = gallery.querySelector('.left');
+  const right = gallery.querySelector('.right');
+
+  if(track && left && right){
+    left.onclick = () => track.scrollBy({ left: -300, behavior: 'smooth' });
+    right.onclick = () => track.scrollBy({ left: 300, behavior: 'smooth' });
+  }
+});
+
+// ================== LIGHTBOX FUNCTIONALITY ==================
+const galleryImages = document.querySelectorAll('.gallery img, .print-gallery img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+
+if(galleryImages.length && lightbox && lightboxImg) {
+  galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      lightbox.classList.remove('active');
+    }
+  });
+}
 
 

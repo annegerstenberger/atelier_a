@@ -180,16 +180,12 @@
   </div>
 </div>
 
-<div style="text-align:center; margin: 4rem 0;">
-  <a href="index.html" style="text-decoration:none; color:#333; font-family:'Encode Sans', sans-serif; font-size:1rem; letter-spacing:1px;">
-    ← back home
-  </a>
-</div>
  <!-- ===== LIGHTBOX ===== -->
   <div id="lightbox" class="lightbox">
     <img id="lightbox-img" src="" alt="">
   </div>
 
+  <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
   <div class="footer-content">
     <h2 class="footer-brand">© atelier a.</h2>
@@ -201,87 +197,8 @@
     </div>
   </div>
 </footer>
- <script>
-   <!-- ===== JAVASCRIPT FOR HAMBURGER ===== -->
-
-  const hamburger = document.getElementById('hamburger');
-  const menu = document.getElementById('menu');
-  const overlay = document.getElementById('overlay');
-
-  // Open menu
-  hamburger.addEventListener('click', () => {
-    menu.classList.add('active');
-    overlay.classList.add('active');
-  });
-
-  // Close menu when clicking outside
-  overlay.addEventListener('click', () => {
-    menu.classList.remove('active');
-    overlay.classList.remove('active');
-  });
-</script>
-<script>
-  // Fade in on load
-  document.body.classList.add('fade');
-
-  window.addEventListener('load', () => {
-    document.body.classList.add('fade-active');
-  });
-
-  // Fade out on link click
-  document.querySelectorAll('a').forEach(link => {
-    const href = link.getAttribute('href');
-
-    // Only fade out on actual page navigation
-    if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.body.classList.remove('fade-active');
-        setTimeout(() => {
-          window.location = href;
-        }, 500); // same duration as CSS transition
-      });
-    }
-  });
-
-  // Fix white screen when going BACK to the page (bfcache restore)
-  window.addEventListener('pageshow', (event) => {
-    if (event.persisted) {
-      document.body.classList.add('fade-active');
-    }
-  });
-
-
-
-    // ===== LIGHTBOX FUNCTIONALITY =====
-    const galleryImages = document.querySelectorAll('.gallery img');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-
-    galleryImages.forEach(img => {
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightbox.classList.add('active');
-      });
-    });
-
-    lightbox.addEventListener('click', () => {
-      lightbox.classList.remove('active');
-    });
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') lightbox.classList.remove('active');
-    });
-
-    // ===== LAZY LOADING IMAGES =====
-
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("img").forEach(img => {
-    img.loading = "lazy";
-  });
-});
-</script>
-<!-- ===================== FOOTER ===================== -->
+ 
+<script src="main.js"></script>
 
 </body>
 </html>

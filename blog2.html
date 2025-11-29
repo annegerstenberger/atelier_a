@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>atelier a.</title>
 
     <!-- External stylesheet -->
     <link rel="stylesheet" href="blog2.css">
@@ -304,38 +304,6 @@
   </div>
 </div>
 
-    <!-- ===== MOBILE MENU SCRIPT ===== -->
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const menu = document.getElementById('menu');
-        const overlay = document.getElementById('overlay');
-
-        hamburger.addEventListener('click', () => {
-            menu.classList.toggle('active');
-            overlay.classList.toggle('active');
-        });
-
-        overlay.addEventListener('click', () => {
-            menu.classList.remove('active');
-            overlay.classList.remove('active');
-        });
-    </script>
-<script>
-  // ===== GALLERY =====
-document.querySelectorAll('.gallery').forEach(gallery => {
-  const track = gallery.querySelector('.track');
-  gallery.querySelector('.left').onclick = () => track.scrollBy({ left: -300, behavior: 'smooth' });
-  gallery.querySelector('.right').onclick = () => track.scrollBy({ left: 300, behavior: 'smooth' });
-});
-
-// ===== LAZY LOADING IMAGES =====
-
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("img").forEach(img => {
-    img.loading = "lazy";
-  });
-});
-</script>
 
 <!-- ===================== FOOTER ===================== -->
 <footer class="footer">
@@ -349,5 +317,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   </div>
 </footer>
+<script src="main.js"></script>
 </body>
 </html>
