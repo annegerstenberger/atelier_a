@@ -475,21 +475,22 @@ padding-left: 30px;
     transform: scale(1.08);      /* enlarge smoothly */
 }
 .image-wrapper {
-  position: relative;
-  display: inline-block;
+   position: relative;
   width: 100%;
+  height: 100%;
+  display: block;   /* not inline-block */
 }
-
 .image-button {
   position: absolute;
   bottom: 15px;      /* distance from the bottom */
   left: 15px;        /* distance from the left */
-  background: rgba(0, 0, 0, 0);  /* semi-transparent background */
-  color: #fcf9f3;
-  border: 2px solid #fcf9f3;
+  background: #fcf9f3;  /* semi-transparent background */
+  color: #162f59;
+  border-radius: 4px;
   padding: 10px 18px;
   font-family: "Roboto", sans-serif;
-  font-size: 1.2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
   letter-spacing: 1px;
   text-decoration: none;
   transition: 0.3s ease;
@@ -497,6 +498,16 @@ padding-left: 30px;
 
 .image-button:hover {
     transform: scale(1.08);      /* enlarge smoothly */
+}
+
+@media (max-width: 768px) {
+  .image-button {
+    bottom: 10px;       /* slightly higher for mobile crop */
+    left: 10px;
+    padding: 6px 12px;  /* smaller padding */
+    font-size: 0.9rem;  /* smaller text */
+    border-radius: 3px;
+  }
 }
 /* ===================== TITLE LINK STYLING ===================== */
 .title-link {
