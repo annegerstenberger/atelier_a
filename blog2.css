@@ -361,7 +361,7 @@ padding-left: 30px;
 
   /* ===================== MOBILE TEXT SIZING ===================== */
   .text-column h3 {
-    font-size: 2.2rem;   /* from 3rem → softer for small screens */
+    font-size: 2rem;   /* from 3rem → softer for small screens */
   }
 
   .text-column p {
