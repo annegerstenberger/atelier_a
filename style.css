@@ -329,7 +329,7 @@ padding-left: 30px;
 
   .menu ul li a {
     color: #fcf9f3;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     letter-spacing: 1px;
   }
   /* Show hamburger button */
@@ -385,17 +385,11 @@ padding-left: 30px;
 
 .footer-brand {
   font-family: "Hello-Notie", serif; /* Your brand font */
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 10px;
 }
 
-.footer-text {
-  font-family: "Roboto", sans-serif; /* or your secondary font */
-  font-weight: 300;
-  font-size: 0.5rem;
-  margin-bottom: 20px;
-  opacity: 0.9;
-}
+
 
 .footer-links a {
   font-family: "Roboto", sans-serif;
@@ -534,7 +528,7 @@ padding-left: 30px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 1.6rem; /* smaller font */
+    font-size: 2rem; /* smaller font */
   }
 }
 /* ===================== TITLE LINK STYLING ===================== */
@@ -784,7 +778,7 @@ body.fade-active {
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .center-button {
-    font-size: 1.8rem;
+    font-size: 2rem;
     text-underline-offset: 4px;text-decoration-thickness: 4px;
   }
 }
@@ -813,7 +807,7 @@ body.fade-active {
   .footer-brand::after {
     content: "a.";
     font-family: "Hello-Notie", serif;
-    font-size: 10rem;
+    font-size: 6rem;
     color: #162f59;  /* adjust color */
     display: block;
   }
@@ -821,6 +815,7 @@ body.fade-active {
   /* Stack links underneath */
   .footer-links {
     display: flex;
+     justify-content: center;   
     gap: 12px;
     margin-top: 10px;
   }

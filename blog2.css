@@ -170,14 +170,14 @@ h3 {
     pointer-events: auto;
   }
 
-  .menu {
+ .menu {
     position: fixed;
     top: 0px;
     right: 0;
     height: 100vh;
     width: 50vw;
     background: #c0cedb;
-    padding-top: 20px;
+    padding-top: 60px;
 padding-right: 0px;
 padding-bottom: 80px;
 padding-left: 30px;
@@ -201,7 +201,7 @@ padding-left: 30px;
 
   .menu ul li a {
     color: #fcf9f3;
-    font-size: 2rem;
+    font-size: 1.5rem;
     letter-spacing: 1px;
   }
 
@@ -397,16 +397,10 @@ padding-left: 30px;
 
 .footer-brand {
   font-family: "Hello-Notie", serif; /* Your brand font */
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 10px;
 }
 
-.footer-text {
-  font-family: "Roboto", sans-serif; /* or your secondary font */
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  opacity: 0.9;
-}
 
 .footer-links a {
   font-family: "Roboto", sans-serif;
@@ -414,10 +408,52 @@ padding-left: 30px;
   margin: 0 15px;
   text-decoration: none;
   transition: color 0.3s;
-   font-size: 1.2rem;
+   font-size: 1.5rem;
    font-weight: 300;
 }
 
 .footer-links a:hover {
   color: #c0cedb; /* hover contrast */
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .center-button {
+    padding: 12px 24px;
+  }
+}
+@media (max-width: 768px) {
+  /* Footer tweaks */
+  .footer {
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  /* Hide original footer-brand text */
+  .footer-brand {
+    font-size: 0;  /* hide original text */
+    position: relative; /* for pseudo element */
+  }
+
+  /* Inject "a." using ::after */
+  .footer-brand::after {
+    content: "a.";
+    font-family: "Hello-Notie", serif;
+    font-size: 6rem;
+    color: #162f59;  /* adjust color */
+    display: block;
+  }
+
+  /* Stack links underneath */
+  .footer-links {
+    display: flex;
+     justify-content: center;   
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .footer-links a {
+    font-size: 1.4rem;
+    color: #162f59;
+  }
 }
