@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Hello-Notie";
+  src: url("fonts/Hello-Notie.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* ===================== RESET — match index.html behaviour ===================== */
 * {
   margin: 0;
@@ -51,9 +58,9 @@ h1.left-align {
 }
 
 h3 {
-  font-family: 'DM Serif Display', serif;
-  font-weight: 400;
-  font-size: 3rem;
+  font-family: 'Roboto', serif;
+  font-weight: 300;
+  font-size: 2rem;
   margin-bottom: 20px;
   color: #162f59;
   padding-top: 20px;
@@ -86,8 +93,8 @@ h3 {
 }
 
 .header .brand {
-  font-family: 'DM Serif Display', serif;
-  font-size: 2rem;
+  font-family: 'Hello-Notie', serif;
+  font-size: 3rem;
   color: #162f59;
   text-decoration: none;
 }
@@ -114,10 +121,10 @@ h3 {
 }
 
 .menu a {
-  font-family: "DM Serif Display", serif;
-  font-size: 2rem;
+  font-family: "Roboto", serif;
+  font-size: 1.5rem;
+  font-weight: 300;
   color: #162f59;
-  font-weight: 100;
   transition: color 0.3s;
 }
 
@@ -330,7 +337,7 @@ padding-left: 30px;
 
  .gallery-wrapper {
     width: 100%;
-    height: 70vh;      /* ← make wrapper 70% of viewport height */
+    height: 60vh;      /* ← make wrapper 70% of viewport height */
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
@@ -389,25 +396,26 @@ padding-left: 30px;
 }
 
 .footer-brand {
-  font-family: "DM Serif Display", serif; /* Your brand font */
+  font-family: "Hello-Notie", serif; /* Your brand font */
   font-size: 2rem;
   margin-bottom: 10px;
 }
 
 .footer-text {
-  font-family: "Open Sans", sans-serif; /* or your secondary font */
+  font-family: "Roboto", sans-serif; /* or your secondary font */
   font-size: 1.5rem;
   margin-bottom: 20px;
   opacity: 0.9;
 }
 
 .footer-links a {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #162f59;
   margin: 0 15px;
   text-decoration: none;
   transition: color 0.3s;
    font-size: 1.2rem;
+   font-weight: 300;
 }
 
 .footer-links a:hover {

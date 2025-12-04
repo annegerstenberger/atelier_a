@@ -1,9 +1,18 @@
+
+
+@font-face {
+  font-family: "Hello-Notie";
+  src: url("fonts/Hello-Notie.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 /* ===================== RESET DEFAULT STYLES ===================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 
 body, html {
   height: 100%;
@@ -22,12 +31,17 @@ h2 {
 }
 
 h1 {
-  font-family: 'DM Serif Display', serif;
-  font-weight: 400; /* normal */
+  font-family: 'Roboto', serif;
+  font-weight: 300; /* normal */
   font-style: normal;
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 20px;
   color: #162f59;
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;     /* mobile size */
+  }
 }
 
 h3 {
@@ -41,9 +55,11 @@ h3 {
 }
 
 h1.left-align {
+  font-family: 'Roboto', sans-serif;
   text-align: left;
   padding-left: 40px;  /* optional, to match header padding */
     color: #162f59;
+      font-size: 2.2rem;
 }
 
 .text-center {
@@ -56,9 +72,7 @@ h1.left-align {
 
 /* Mobile text */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2rem; /* smaller on mobile */
-  }
+ 
   h1.left-align {
     padding-left: 20px; /* less padding on mobile */
   }
@@ -66,7 +80,7 @@ h1.left-align {
     font-size: 1rem; /* smaller on mobile */
     text-align: center;
   }
-}
+  }
 
 /* ===================== FONTS ===================== */
 .dm-serif-display-regular {
@@ -111,7 +125,7 @@ h1.left-align {
   }
 }
 .brand-text {
-   font-family: 'DM Serif Display', serif;
+   font-family: 'Hello-Notie', sans-serif;
   font-weight: 400; /* normal */
   font-style: normal;
   font-size: 8rem;
@@ -190,7 +204,11 @@ min-height: 100vh;
   color: #444;
   line-height: 1.5;
 }
-
+@media (max-width: 768px) {
+  .box-image {
+    height: 40vh;   /* mobile: 40% of viewport height */
+  }
+}
 /* ===================== HEADER / MENU ===================== */
 .header {
   display: flex;
@@ -207,8 +225,8 @@ min-height: 100vh;
 
 /* Brand styling */
 .header .brand {
-  font-family: 'DM Serif Display', serif; /* same as site */
-  font-size: 2rem; /* same height as header text */
+  font-family: 'Hello-Notie', sans-serif; /* same as site */
+  font-size: 3rem; /* same height as header text */
   color: #c0cedb; /* adjust as needed */
   text-decoration: none; /* remove underline */
 }
@@ -236,11 +254,11 @@ min-height: 100vh;
 }
 
 .menu a {
-  font-family: "DM Serif Display", serif;
-  font-size: 2rem;
+  font-family: "Roboto", serif;
+  font-size: 1.5rem;
   color: #c0cedb;
   text-decoration: none;
-  font-weight: 100;
+  font-weight: 300;
   transition: color 0.3s;
 }
 
@@ -287,7 +305,7 @@ min-height: 100vh;
     height: 100vh;
     width: 50vw;
     background: #c0cedb;
-    padding-top: 20px;
+    padding-top: 60px;
 padding-right: 0px;
 padding-bottom: 80px;
 padding-left: 30px;
@@ -311,7 +329,7 @@ padding-left: 30px;
 
   .menu ul li a {
     color: #fcf9f3;
-    font-size: 2rem;
+    font-size: 1.8rem;
     letter-spacing: 1px;
   }
   /* Show hamburger button */
@@ -366,14 +384,15 @@ padding-left: 30px;
 }
 
 .footer-brand {
-  font-family: "DM Serif Display", serif; /* Your brand font */
+  font-family: "Hello-Notie", serif; /* Your brand font */
   font-size: 2rem;
   margin-bottom: 10px;
 }
 
 .footer-text {
-  font-family: "Open Sans", sans-serif; /* or your secondary font */
-  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif; /* or your secondary font */
+  font-weight: 300;
+  font-size: 0.5rem;
   margin-bottom: 20px;
   opacity: 0.9;
 }
@@ -384,7 +403,8 @@ padding-left: 30px;
   margin: 0 15px;
   text-decoration: none;
   transition: color 0.3s;
-   font-size: 1.2rem;
+   font-size: 1.5rem;
+   font-weight: 300;
 }
 
 .footer-links a:hover {
@@ -482,31 +502,39 @@ padding-left: 30px;
 }
 .image-button {
   position: absolute;
-  bottom: 15px;      /* distance from the bottom */
-  left: 15px;        /* distance from the left */
-  background: #fcf9f3;  /* semi-transparent background */
-  color: #162f59;
-  border-radius: 4px;
-  padding: 10px 18px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  font-size: 1.5rem;
-  letter-spacing: 1px;
-  text-decoration: none;
-  transition: 0.3s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-family: "Hello-Notie", sans-serif;
+  font-size: 3rem;
+
+  color: #fcf9f3;           /* white-ish, since text is on images */
+  text-decoration: underline;
+    text-underline-offset: 6px;   /* <-- underline gap */
+  text-decoration-thickness: 4px; /* optional: thicker underline */
+
+  background: transparent;  /* remove button box */
+  padding: 0;
+  border: none;
+
+  cursor: pointer;
+  transition: opacity 0.2s ease;
 }
 
 .image-button:hover {
-    transform: scale(1.08);      /* enlarge smoothly */
+  opacity: 0.7;
 }
 
+
+
+
 @media (max-width: 768px) {
-  .image-button {
-    bottom: 10px;       /* slightly higher for mobile crop */
-    left: 10px;
-    padding: 6px 12px;  /* smaller padding */
-    font-size: 0.9rem;  /* smaller text */
-    border-radius: 3px;
+   .image-button {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.6rem; /* smaller font */
   }
 }
 /* ===================== TITLE LINK STYLING ===================== */
@@ -723,5 +751,82 @@ body.fade-active {
     /* Remove any transform on all img-containers */
   .img-container {
     transform: none !important;
+  }
+}
+#section_three {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-button {
+  font-family: "Hello-Notie", sans-serif;
+  font-size: 3rem;
+
+  color: #fcf9f3;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 4px;
+
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  transition: opacity 0.2s ease;
+}
+
+.center-button:hover {
+  opacity: 0.7;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .center-button {
+    font-size: 1.8rem;
+    text-underline-offset: 4px;text-decoration-thickness: 4px;
+  }
+}
+
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .center-button {
+    padding: 12px 24px;
+  }
+}
+@media (max-width: 768px) {
+  /* Footer tweaks */
+  .footer {
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  /* Hide original footer-brand text */
+  .footer-brand {
+    font-size: 0;  /* hide original text */
+    position: relative; /* for pseudo element */
+  }
+
+  /* Inject "a." using ::after */
+  .footer-brand::after {
+    content: "a.";
+    font-family: "Hello-Notie", serif;
+    font-size: 10rem;
+    color: #162f59;  /* adjust color */
+    display: block;
+  }
+
+  /* Stack links underneath */
+  .footer-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .footer-links a {
+    font-size: 1.4rem;
+    color: #162f59;
   }
 }
