@@ -359,7 +359,9 @@ padding-left: 30px;
   .spacer {
     height: 20px; /* smaller for mobile */
   }
-
+  .spacer-middle{
+    height: 40px; /* smaller for mobile */
+  }
   .spacer-small {
     height: 10px;
   }
