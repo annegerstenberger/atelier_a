@@ -825,3 +825,84 @@ body.fade-active {
     color: #162f59;
   }
 }
+/* ===================== ABOUT PAGE LAYOUT ===================== */
+
+/* Override the container settings for About page only */
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: nowrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Image box with its own background */
+.about-image-box {
+    flex: 1;
+    min-width: 320px;
+    background-color: #e9eff5;  /* different background color */
+    padding: 20px;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image styling */
+.about-image-box img {
+    width: 100%;
+    max-width: 380px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Text box */
+.about-text-box {
+    flex: 1;
+    min-width: 300px;
+    color: #162f59;
+}
+
+.about-text-box p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 900px) {
+    .about-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .about-image-box {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .about-image-box img {
+        max-width: 100%;
+    }
+}
+.acknowledgement {
+  margin-top: 20px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #162f59; /* soft grey, subtly placed */
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Smaller on mobile */
+@media (max-width: 600px) {
+  .acknowledgement {
+    font-size: 0.6rem;     /* mobile size */
+    line-height: 1.7;      /* extra breathing room on small screens */
+    max-width: 90%;        /* keeps it looking clean */
+  }
+}

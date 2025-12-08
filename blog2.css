@@ -29,33 +29,8 @@ a {
 }
 
 /* ===================== FONTS ===================== */
-.dm-serif-display-regular {
-  font-family: "DM Serif Display", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.dm-serif-display-regular-italic {
-  font-family: "DM Serif Display", serif;
-  font-weight: 400;
-  font-style: italic;
-}
 
 
-h1 {
-  font-family: 'DM Serif Display', serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 4rem;
-  margin-bottom: 20px;
-  color: #28b88d;
-}
-
-h1.left-align {
-  text-align: left;
-  padding-left: 40px;
-  color: #c0cedb;
-}
 
 h3 {
   font-family: 'Roboto', serif;
@@ -103,9 +78,6 @@ h3 {
   color: #c0cedb;
 }
 
-.no-brand .brand {
-  visibility: hidden;
-}
 
 .menu {
   margin-left: auto;
@@ -273,7 +245,6 @@ padding-left: 30px;
 .gallery-track::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
 }
-
 .gallery-track::-moz-scrollbar {
   display: none; /* Firefox */
 }
@@ -417,11 +388,6 @@ padding-left: 30px;
 }
 
 /* Mobile adjustments */
-@media (max-width: 768px) {
-  .center-button {
-    padding: 12px 24px;
-  }
-}
 @media (max-width: 768px) {
   /* Footer tweaks */
   .footer {
