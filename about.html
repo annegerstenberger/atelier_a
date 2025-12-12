@@ -43,6 +43,15 @@
       margin: 0;
       background: #fcf9f3;
     }
+    .header-spacer {
+    height: 0; /* default for desktop */
+}
+
+@media (max-width: 900px) {
+    .header-spacer {
+        height: 70px; /* or your header height */
+    }
+}
 
     
   </style>
@@ -57,9 +66,10 @@
   <div class="hamburger" id="hamburger">&#9776;</div>
   <nav class="menu" id="menu">
     <ul>
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="about.html">ABOUT</a></li>
-      <li><a href="blog2.html">JOURNAL</a></li>
+            <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="blog2.html">JOURNAL</a></li>
     </ul>
   </nav>
   <div class="overlay" id="overlay"></div>
@@ -112,9 +122,9 @@ my greatest treasure. If that’s you, and you’d like me to capture your ordin
 <div class="spacer-small"></div> 
     <div class="footer-links">
      
-      <a href="blog2.html">JOURNAL</a>
-      <a href="about.html">ABOUT</a>
+         <a href="blog2.html">JOURNAL</a>
       <a href="contact.html">CONTACT</a>
+            <a href="about.html">ABOUT</a>
     </div>
   </div>
 </footer>
