@@ -1,85 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>atelier a.</title>
+   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>atelier a.</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Encode+Sans:wght@300;400;500&family=DM+Serif+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/favicon.png">
 
-    <!-- Main Styles -->
-    <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Encode+Sans:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="img/favicon.png">
+
+      <link rel="stylesheet" href="style.css">
+ <style>
+
+/* DEBUG OUTLINES — helps us see what is shifting */
+.header {
+    position: fixed !important;
+    top: 0 !important;
+    height: 80px !important;
+}
+
+/* remove any height or overflow constraints */
+.about-fullscreen {
+    height: auto !important;
+    overflow: visible !important;
+}
+
+
+/* ensure header is fixed at top and counted */
+.header {
+    position: fixed !important;
+    top: 0 !important;
+    height: 80px !important;
+}
+
+
+
+    body {
+      margin: 0;
+      background: #fcf9f3;
+    }
+
+    
+  </style>
+
 </head>
 
 <body class="fade">
 
-<!-- ===================== HEADER ===================== -->
-<header class="header">
-    <a href="index.html" class="brand">atelier a.</a>
-
-    <nav class="menu" id="menu">
-        <ul>
-            <li><a href="print.html">print</a></li>
-            <li><a href="gallery.html">gallery</a></li>
-            <li><a href="about.html">about</a></li>
-            <li><a href="contact.html">contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="hamburger" id="hamburger">☰</div>
+<!-- ===== HEADER SECTION ===== -->
+ <header class="header">
+  <a href="index.html" class="brand">atelier a.</a>
+  <div class="hamburger" id="hamburger">&#9776;</div>
+  <nav class="menu" id="menu">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="blog2.html">JOURNAL</a></li>
+    </ul>
+  </nav>
+  <div class="overlay" id="overlay"></div>
 </header>
 
-<div class="overlay" id="overlay"></div>
 
-<!-- ===================== SPACER FOR FIXED HEADER ===================== -->
-<div class="spacer-large"></div>
-
+<div class="header-spacer"></div>
 <!-- ===================== ABOUT CONTENT WITH PHOTO ===================== -->
-<section class="section">
-    <div class="about-container">
 
-        <!-- Text Box -->
-        <div class="about-text-box">
-            <h1>About</h1>
-            <p>
-                Hello, I’m Anne!
-                <br><br>
-                I love taking photos—simply documenting what I see: colors, moments, shapes, and the compositions life gives us. I see them with my heart first, then with my eyes.
-                <br><br>
-                Kids are always around me, and I’ve been documenting my children’s universe for the last ten years. It’s chaos and imperfection, yet full of beauty if you just let them be.
-                <br><br>
-                I value film photography for its honesty and its stunning colors. Because film isn’t always affordable, I embrace digital as well—both have their own magic.
-                <br><br>
-                I also make sustainable frames. For any inquiries, just shoot me a message.
-                <br><br>
-                If you’d like me to document a little snippet of your life, get in touch — I’d love to hear from you.
-            </p>
-        </div>
+<section class="about-fullscreen">
 
-        <!-- Photo Box -->
-        <div class="about-image-box">
-            <img src="img/about.jpg" alt="Anne">
+    <div class="about-text-side">
+        <div class="about-text-inner">
+            <h1>Hey,</h1>
+
+            <div class="about-columns">
+                <p>I'm Anne.<br><br>
+               
+
+I love taking photos and I have a passion for film. Film taught me to observe 
+and be in the moment. Film for me means trusting the process: not second-guessing, 
+embracing the imperfect, finding beauty in everyday things rather than trying to 
+stage the unnatural. <br><br>Film helps me to slow down, to follow the light and to trust 
+the connection between my heart and what I see. It has delivered honest quality for so many years - something the 
+digital format will never quite match.</p></p> <p><br> <br>Simply documenting what I see is what 
+I do: colours and space, moments of chaos and calm and inbetween. If you let me document 
+a bit of your life, I will find your beauty in what you feel is ordinary. It is 
+magic and I would love to preserve some for you. <br><br>
+Over the last ten years, my children have grown up in front of me with a speed 
+that feels unreal. I’ve captured many little moments in between, and they are now 
+my greatest treasure. If that’s you, and you’d like me to capture your ordinary magic, 
+<br><br>say hello!  </p>
+
+               
+            </div>
+            <a href="contact.html" class="btn">Contact</a> 
         </div>
     </div>
+
+    <div class="about-image-side">
+        <img src="img/about.jpg" alt="Anne">
+    </div>
+
 </section>
 
 <!-- ===================== FOOTER ===================== -->
 <footer class="footer">
-    <div class="footer-content">
-        <div class="footer-brand">a.</div>
-
-        <div class="footer-links">
-            <a href="print.html">print</a>
-            <a href="gallery.html">gallery</a>
-            <a href="about.html">about</a>
-            <a href="contact.html">contact</a>
-        </div>
+  <div class="footer-content">
+    <h2 class="footer-brand">atelier a.</h2>
+<div class="spacer-small"></div> 
+    <div class="footer-links">
+     
+      <a href="blog2.html">JOURNAL</a>
+      <a href="contact.html">CONTACT</a>
     </div>
+  </div>
 </footer>
+
 
 <!-- ===================== MAIN JS ===================== -->
 <script src="main.js"></script>

@@ -476,10 +476,12 @@ padding-left: 30px;
   margin-top: 10px;
   padding: 10px 10px;
   background-color: #c0cedb00;
-  border: 1px solid #162f59;
+  border: 2px solid #162f59;
   text-decoration: none;
   font-family: "Roboto", serif;
+  font-size: 0.8rem;
   letter-spacing: 0.5px;
+  border-radius: 6px;
   
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -519,8 +521,7 @@ padding-left: 30px;
 }
 
 .image-button:hover {
-  opacity: 0.7;
-}
+color: #c0cedb;}
 
 
 
@@ -774,8 +775,7 @@ body.fade-active {
 }
 
 .center-button:hover {
-  opacity: 0.7;
-}
+color: #c0cedb;}
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
@@ -827,71 +827,137 @@ body.fade-active {
     color: #162f59;
   }
 }
-/* ===================== ABOUT PAGE LAYOUT ===================== */
-
-/* Override the container settings for About page only */
-.about-container {
+/* ===================== FULLSCREEN ABOUT SECTION ===================== */
+.about-fullscreen {
+    height: 100vh;
+    height: 100dvh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    flex-wrap: nowrap;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Image box with its own background */
-.about-image-box {
-    flex: 1;
-    min-width: 320px;
-    background-color: #e9eff5;  /* different background color */
-    padding: 20px;
-    border-radius: 12px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Image styling */
-.about-image-box img {
     width: 100%;
-    max-width: 380px;
-    object-fit: cover;
-    border-radius: 10px;
+    overflow: hidden;
 }
 
-/* Text box */
-.about-text-box {
-    flex: 1;
-    min-width: 300px;
+/* LEFT HALF — TEXT */
+.about-text-side {
+    width: 50%;
+    background-color: #fcf9f3; 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-end;   /* pushes text to the bottom */
+    height: auto;
+}
+
+.about-text-inner {
+    width: 100%;
+    padding-left: 40px;  /* desktop left spacing */
+    padding-right: 40px; /* optional */
+    padding-bottom: 40px; /* spacing from bottom */
     color: #162f59;
 }
 
-.about-text-box p {
-    font-size: 1.2rem;
+.about-text-inner p {
+    font-size: 0.8rem;
     line-height: 1.7;
 }
-
-
-/* ===================== RESPONSIVE ===================== */
-@media (max-width: 900px) {
-    .about-container {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .about-image-box {
-        width: 100%;
-        max-width: 500px;
-        margin: 0 auto;
-    }
-
-    .about-image-box img {
-        max-width: 100%;
-    }
+.about-columns {
+    column-count: 2;
+    column-gap: 40px;
+    margin-top: 20px; /* spacing under the heading */
 }
+
+.about-columns p {
+    break-inside: avoid; /* prevents paragraphs from splitting */
+    margin-bottom: 1rem;
+}
+/* RIGHT HALF — FULL HEIGHT IMAGE BACKGROUND */
+.header-spacer {
+    height: 80px; /* same height as header */
+    width: 100%;
+}
+.about-image-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* prevents scrollbars */
+    background-color: #0000; /* optional */
+}
+
+
+.about-image-side img {
+    height: 100vh;   /* ALWAYS full screen height */
+    width: auto;     /* keep proportions */
+    object-fit: contain; /* show full image without cropping */
+    display: block;
+}
+/* ===================== MOBILE ===================== */
+@media (max-width: 900px) {
+
+    .about-fullscreen {
+        flex-direction: column;
+        height: auto;
+    }
+       .about-text-side {
+        height: auto !important;
+    }
+
+    .about-text-side,
+    .about-image-side {
+        width: 100%;
+    }
+
+ 
+    .about-text-side {
+        padding: 30px 20px;
+    }
+  .about-fullscreen {
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+
+  /* Stack text normally (no columns) */
+  .about-columns {
+    column-count: 1;
+    column-gap: 0;
+  }
+
+  /* Center-align paragraphs */
+  .about-text-inner p,
+  .about-columns p {
+    text-align: center;
+  }
+
+  /* Optional: slightly increase size on mobile */
+  .about-text-inner p {
+    font-size: 0.9rem;
+  }
+     .about-text-inner {
+        text-align: center; /* center all text inside on mobile */
+    }
+
+    .about-text-inner .btn {
+        margin-left: auto;
+        margin-right: auto;
+        display: inline-block; /* ensures button respects auto margins */
+    }
+      .about-image-side img {
+        height: auto;           /* natural height */
+        max-height: 60vh;       /* optional, max 60% of viewport */
+        width: 100%;            /* scale to container width */
+        object-fit: cover;      /* fill nicely without distortion */
+        margin: 0 auto;         /* center horizontally */
+        display: block;
+    }
+      .about-image-side {
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box; /* ensures padding doesn't break width */
+  }
+}
+
 .acknowledgement {
+  font-family: 'Roboto', serif;
   margin-top: 20px;
   font-size: 1rem;
   line-height: 1.5;
