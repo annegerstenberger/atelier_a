@@ -974,3 +974,93 @@ color: #c0cedb;}
     max-width: 90%;        /* keeps it looking clean */
   }
 }
+/* Container positioning */
+.has-dropdown {
+  position: relative;
+  padding-right: 40px; /* space for arrow */
+}
+
+/* Arrow indicator */
+.arrow-nav {
+  font-size: 0.7em;
+  margin-left: 4px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 250%;
+  left: 0;
+  display: flex;            /* changed from block */
+  flex-direction: column;   /* force vertical stacking */
+  min-width: 50px;         /* optional: match parent menu width */
+  background: #fcf9f300;
+  list-style: none;
+  margin: 0 ;
+  opacity: 0;
+  visibility: hidden;
+ 
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+ align-items: left;  /* <-- centers the items */
+  text-align: left;   /* <-- ensures text is centered */
+
+}
+/* Show dropdown on hover OR JS class */
+.has-dropdown:hover .dropdown,
+.has-dropdown.open .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown li {
+  width: 100%;             /* fill dropdown width */
+  padding: 0;      /* spacing */
+  margin: -10px 0; /* spacing between items */
+}
+
+.dropdown li a {
+  display: block;          /* fills entire clickable area */
+  font-family: "Roboto", serif;
+  font-size: 1.5rem;
+  color: #162f59;
+  text-decoration: none;
+  font-weight: 300;
+  transition: color 0.3s;
+}
+.dropdown li a:hover {
+  color: #c0cedb;
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
+  text-underline-offset: 6px;
+}
+.has-dropdown:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Mobile: hidden by default, shown when parent has .open */
+@media (max-width: 900px) {
+
+  .dropdown {
+   font-size: 0.5rem;          /* default mobile font size */
+    position: absolute;
+        top: 200%; 
+    display: none;
+    border: none;
+    opacity: 1;
+    visibility: hidden;
+    transform: none;
+  }
+.dropdown li {
+  margin: 0; /* remove spacing */
+  }
+.dropdown li a {
+font-size: 1.2rem !important;
+    }
+
+  .has-dropdown.open .dropdown {
+    display: block;
+  }
+}

@@ -103,5 +103,28 @@ if(galleryImages.length && lightbox && lightboxImg) {
     }
   });
 }
+// ================== DROPDOWN MOBILE TOGGLE ==================
+document.querySelectorAll(".has-dropdown > a").forEach(link => {
+  link.addEventListener("click", e => {
+    if (window.innerWidth <= 900) {
+      e.preventDefault(); // Prevent navigating
+      link.parentElement.classList.toggle("open");
+    }
+  });
+});
 
+// ================== DROPDOWN HOVER DELAY ==================
+const dropdown = document.querySelector('.has-dropdown');
+let timeout;
+
+dropdown.addEventListener('mouseenter', () => {
+  clearTimeout(timeout);
+  dropdown.classList.add('open');
+});
+
+dropdown.addEventListener('mouseleave', () => {
+  timeout = setTimeout(() => {
+    dropdown.classList.remove('open');
+  }, 500); // 500ms delay before hiding
+});
 
