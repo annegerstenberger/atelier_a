@@ -101,6 +101,11 @@
 .header-spacer {
     height: 0; /* default for desktop */
 }
+.required-note {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
 
     /* MOBILE */
     @media (max-width: 900px) {
@@ -166,14 +171,26 @@
     <!-- RIGHT: IMAGE -->
     <div class="contact-form-side">
         <div class="contact-form-inner">
+            <div class="spacer-large"></div>
+            
             <h1>Say Hello</h1>
-            <form action="mailto:hello@ateliera-photo.com" method="POST" enctype="text/plain">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="text" name="location" placeholder="Your Location">
-                <textarea name="message" placeholder="Your Message" required></textarea>
+                        <p class="required-note">* Required fields</p>
+            <form id="contactForm" action="https://formspree.io/f/mjknlknb" method="POST">
+<input type="text" name="name" placeholder="Your Name *" required>
+
+<input type="text" name="location" placeholder="Your Location *" required>
+
+<input type="email" name="email" placeholder="Your Email *" required>
+
+<input type="hidden" name="_subject" value="New message from atelier a.">
+
+<textarea name="message" placeholder="Your Message *" required></textarea>
+
                 <button type="submit">Send</button>
             </form>
-            <div class="spacer-large"></div>
+            <div class="spacer"></div>
+
+
             <p>or email me directly hello@ateliera-photo.com</p>
         </div>
     </div>
@@ -194,5 +211,19 @@
 </footer>
 
 <script src="main.js"></script>
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  fetch("https://formspree.io/f/mjknlknb", {
+    method: "POST",
+    body: new FormData(this),
+    headers: { "Accept": "application/json" }
+  })
+  .then(() => alert("Thanks for reaching out!"))
+  .catch(() => alert("Something went wrong."));
+});
+</script>
+
 </body>
 </html>
