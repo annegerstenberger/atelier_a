@@ -204,7 +204,7 @@ min-height: 100vh;
   color: #444;
   line-height: 1.5;
 }
-@media (max-width: 768px) {
+@media (max-width: 1040px) {
   .box-image {
     height: 40vh;   /* mobile: 40% of viewport height */
   }
@@ -275,7 +275,7 @@ min-height: 100vh;
 }
 
 /*  MOBILE RESPONSIVE header/menu */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     /* Match blog2: visually shift brand & hamburger 20px */
   .header .brand {
     transform: translateX(-20px);
@@ -355,7 +355,7 @@ padding-left: 30px;
     
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .spacer {
     height: 20px; /* smaller for mobile */
   }
@@ -431,7 +431,7 @@ padding-left: 30px;
 }
 
 /* fixed backgrounds only on large screens */
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   #section_three {
       background-attachment: fixed; /* parallax effect for desktop */
   }
@@ -652,7 +652,7 @@ body.fade-active {
 }
 
 /*  MOBILE: stack images */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .print-gallery {
     display: flex;
     flex-direction: column;  /* stack one per row */
